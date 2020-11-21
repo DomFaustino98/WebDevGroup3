@@ -1,0 +1,129 @@
+body{
+    background: grey;
+    background-image: url('https://www.altadenalibrary.org/wp-content/uploads/2018/10/cinema.png');
+}
+
+.header{
+    font-size: rgb(97, 0, 0);
+}
+
+.list-icons {
+    display: inline-flex;
+    color: rgb(177, 165, 73);
+}
+
+.list-icons li {
+    list-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    width: 49px;
+    margin-right: 10px
+}
+
+.list-icons li i {
+    font-size: 17px;
+    color: #fff;
+}
+
+@media (max-width:50%) {
+    .list-icons {
+        display: block;
+    }
+}
+
+input[type=submit]{
+    padding:5px 15px; 
+    background: rgb(177, 165, 73); 
+    border:0 none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    border: solid;
+    color: rgb(97, 0, 0);
+    position: fixed;
+    bottom: 200px;
+    right: 38%;
+}
+
+.genre {
+    background: rgb(177, 165, 73);
+    border-radius: 5px;
+    padding: 15px;
+    border-color: black;
+    border: solid;
+    position: relative;
+    left: 30px;
+}
+
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+    
+#profile {
+    margin:auto;
+    margin-top:50px;
+    height:250px;
+    width:400px;
+}
+    
+table { 
+    width:400px; height:250px;
+}
+
+     
+    table tr td { 
+    background:rgb(177, 165, 73); 
+    border:1px solid rgb(177, 165, 73);
+    height:50px;
+    font-family:Cuprum;
+    font-size:25px;
+    color:rgb(97, 0, 0);
+    text-align:center;
+    }
+    
+    #profile table tr td.image { background-color:rgb(97, 0, 0);; border:none;}
+    #profile table tr td.button { background-color:rgb(97, 0, 0);; border:none;}
+    img { border:2px solid rgb(177, 165, 73);; height:200px; }
+
+    #imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.list-icons{
+    position: fixed;
+    left: 33%;
+}
+
+#profile{
+    position: fixed;
+    bottom: 300px;
+    right: 25%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}
