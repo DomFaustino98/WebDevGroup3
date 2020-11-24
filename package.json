@@ -1,0 +1,27 @@
+{
+  "name": "webdevgroup3",
+  "version": "1.0.0",
+  "description": "Real time chats",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DomFaustino98/WebDevGroup3.git"
+  },
+  "author": "Andrew N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DomFaustino98/WebDevGroup3/issues"
+  },
+  "homepage": "https://github.com/DomFaustino98/WebDevGroup3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
