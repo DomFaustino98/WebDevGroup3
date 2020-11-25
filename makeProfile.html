@@ -16,6 +16,24 @@
             function isValid(){
                 result = confirm("are you sure you want to leave this page?");
             }
+            function onSignIn(googleUser) {
+              var profile = googleUser.getBasicProfile();
+              var id = profile.getId();
+              var fullName = profile.getName();
+              var givenName = profile.getGivenName();
+              var familyName = profile.getFamilyName();
+              var imgUrl = profile.getImageUrl();
+              var email = profile.getEmail();
+              var id_token = googleUser.getAuthResponse().id_token;
+              
+              document.getElementById('fname') = givenName;
+              if(familyName != undefined){
+                document.getElementById('lname') = familyName;
+              }
+              document.getElementById('email') = email;
+              document.getElementById('name').value = givenName + familyName;
+              document.getElementById('image').value = imgUrl;
+            }
             //from https://stackoverflow.com/questions/41406509/add-a-profile-picture-in-form-in-html-and-css/41406599
             $("#profileImage").click(function(e) {
                 $("#imageUpload").click();
@@ -36,11 +54,50 @@
         <!-- //that ugly link is the popcorn favicon -->
     </head>
     <body>
-        <form id = "form" method = "GET" onsubmit = "return isValid()" action = "profileMMU.html">
+        <form id="form" method="GET" action="profileMMU.html">
+            <div class="info">
+                <fieldset id="userInfo">
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    <label>Username: </label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" required>
+                    <br>
+                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" required>
+                    <br>
+                    <label>Email: </label><input type = "text" id = "email" name = "email" required>
+                    <br>
+                    <label>Bio: </label>
+                    <input type="text" id="bio" name="bio" maxlength="280">
+                    <br>
+                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280">
+                    <br>
+                    <div class="form-control">
+                        <label class="header">Enter Profile Photo URL: </label>
+                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" required="" capture>
+                    </div>
+                    <p>OR</p>
+                    <div class="form-control">
+                        <label class="header">Upload Profile Photo:</label>
+                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" required="" capture>
+                    </div>
+                </fieldset>
+                <br>
+                <input type="submit" value="Save Profile" id="submit">
+            </div>
+        </form>
+        <!-- <form id = "form" method = "POST" onsubmit = "return isValid()" action = "profileMMU.html">
             <div class = "info">
             <fieldset id = "userInfo">
-                <label>Username: </label><input type = "text" id = "name" name = "name"><br>
-                <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength="280"><br>
+                <label>First Name: </label><input type = "text" id = "fname" name = "fname" required><br>
+                <label>Last Name: </label><input type = "text" id = "lname" name = "lname" required><br>
+                <label>Username: </label><input type = "text" id = "username" name = "username" required><br>
+                <label>Email: </label><input type = "text" id = "email" name = "email" required>
+                <br>
+                <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength="280">
+                <br>
+                <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280">
+                <br>
                 <div class="form-control">
                     <label class="header">Profile Photo:</label>
                     <input id="image" type="file" name="profilePic" placeholder="Photo" required="" capture>
@@ -49,7 +106,7 @@
             <br>
             <input type = "submit" value = "Save Profile" id = "submit">
         </div>
-        </form>
+        </form> -->
     </body>
     <footer>
         
