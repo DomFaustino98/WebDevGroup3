@@ -43,12 +43,27 @@
         <!-- //that ugly link is the popcorn favicon -->
     </head>
     <body>
-        <form id = "form" method = "POST">
+        <form id = "form" method = "GET">
             <div class = "info">
                 <button id = "changePic" onclick = "return changePic();">Change Profile Picture</button>
                 <fieldset id = "userInfo">
+                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" required>
+                    <br>
+                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" required>
+                    <br>
                     <label>Username: </label><input type = "text" id = "username" name = "username" minlength = "3" maxlength = "30">
                     <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength = "280">
+                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280">
+                    <br>
+                    <div class="form-control">
+                        <label class="header">Enter Profile Photo URL: </label>
+                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" required="" capture>
+                    </div>
+                    <p>OR</p>
+                    <div class="form-control">
+                        <label class="header">Upload Profile Photo:</label>
+                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" required="" capture>
+                    </div>
                 </fieldset>
                 <input type = "submit" value = "Cancel" id = "cancelSubmit" onsubmit = "return undo(this.form)" action = "profile.html">
                 <input type = "submit" value = "Done" id = "submit" onsubmit = "return isValid()" action = "profile.html">
