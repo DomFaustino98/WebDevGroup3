@@ -36,12 +36,12 @@
             }
 
             function undo(f){
-                f.fname.value = user.firstname;
-                f.lname.value = user.lastname;
-                f.username.value = user.username;
-                f.bio.value = user.bio;
-                f.favMovie.value = user.favMovie;
-                f.profileImage.value = user.profilePic;
+                f.fname.value = User.givenName;
+                f.lname.value = User.familyName;
+                f.username.value = User.username;
+                f.bio.value = User.bio;
+                f.favMovie.value = User.favMovie;
+                f.profileImage.value = User.profilePic;
                 result = confirm("Undo Changes?");
             }
         </script>
@@ -53,24 +53,24 @@
             <div class = "info">
                 <button id = "changePic" onclick = "return changePic();">Change Profile Picture</button>
                 <fieldset id = "userInfo">
-                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" required><% user.firstname %>
+                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" value = '<% User.firstname %>' required>
                     <br>
-                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" required><% user.lastname %>
+                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" value = '<% User.lastname %>' required>
                     <br>
-                    <label>Username: </label><input type = "text" id = "username" name = "username" minlength = "3" maxlength = "30"><% user.firstname %>
+                    <label>Username: </label><input type = "text" id = "username" name = "username" minlength = "3" maxlength = "30" value = '<% User.firstname %>' >
                     <br>
-                    <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength = "280"><% user.bio %>
+                    <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength = "280" value = '<% User.bio %>' >
                     <br>
-                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280"><% user.favMovie %>
+                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280" value = '<% User.favMovie %>' >
                     <br>
                     <div class="form-control">
                         <label class="header">Enter Profile Photo URL: </label>
-                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" required="" capture><% user.profilePic %>
+                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" value = '<% User.profilePic %>' required="" capture>
                     </div>
                     <p>OR</p>
                     <div class="form-control">
                         <label class="header">Upload Profile Photo:</label>
-                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" required="" capture><% user.profilePic %>
+                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" value = '<% User.profilePic %>' required="" capture>
                     </div>
                 </fieldset>
                 <input type = "submit" value = "Cancel" id = "cancelSubmit" onsubmit = "return undo(this.form)" action = "profileMMU.ejs">
