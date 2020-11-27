@@ -53,24 +53,24 @@
             <div class = "info">
                 <button id = "changePic" onclick = "return changePic();">Change Profile Picture</button>
                 <fieldset id = "userInfo">
-                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" value = '<% User.firstname %>' required>
+                    <label>First Name: </label><input type = "text" id = "fname" name = "fname" value = '<%= User.firstname %>' required>
                     <br>
-                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" value = '<% User.lastname %>' required>
+                    <label>Last Name: </label><input type = "text" id = "lname" name = "lname" value = '<%= User.lastname %>' required>
                     <br>
-                    <label>Username: </label><input type = "text" id = "username" name = "username" minlength = "3" maxlength = "30" value = '<% User.firstname %>' >
+                    <label>Username: </label><input type = "text" id = "username" name = "username" minlength = "3" maxlength = "30" value = '<%= User.firstname %>' >
                     <br>
-                    <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength = "280" value = '<% User.bio %>' >
+                    <label>Bio: </label><input type = "text" id = "bio" name = "bio" maxlength = "280" value = '<%= User.bio %>' >
                     <br>
-                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280" value = '<% User.favMovie %>' >
+                    <label>Favorite Movie: </label><input type = "text" id = "favMovie" name = "favMovie" maxlength="280" value = '<%= User.favmovie %>' >
                     <br>
                     <div class="form-control">
                         <label class="header">Enter Profile Photo URL: </label>
-                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" value = '<% User.profilePic %>' required="" capture>
+                        <input id="imageUrl" type="text" name="profilePicUrl" placeholder="Photo" value = '<%= User.profilePic %>' required="" capture>
                     </div>
                     <p>OR</p>
                     <div class="form-control">
                         <label class="header">Upload Profile Photo:</label>
-                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" value = '<% User.profilePic %>' required="" capture>
+                        <input id="imageFile" type="file" name="profilePicFile" placeholder="Photo" value = '<%= User.profilePic %>' required="" capture>
                     </div>
                 </fieldset>
                 <input type = "submit" value = "Cancel" id = "cancelSubmit" onsubmit = "return undo(this.form)" action = "profileMMU.ejs">
