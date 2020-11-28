@@ -66,15 +66,15 @@
         <p>Profile Picture</p>
         <input type='text' class ='input-box' id='imageUrl' placeholder='enter profile photo URL' capture>
         <p class ='or'>or</p>
-        <input type='file' class='custom-file-input' capture id='imageFile' name='profilePicURL'> <br><br><hr>
-
+        <input type='file' class='custom-file-input' capture id='imageFile' name='profilePicURL' value="<%= User.profilepic %>" > <br><br><hr>
         <!--SAVE AND RETURN TO PROFILE VIEWER-->
         <button type='submit' class='btn' id='submit'>save</button>
-        <!--CANCEL AND RETURN TO PROFILE VIEWER, button that looks like a hyperlink-->
-        <input type ='submit' value ='cancel and return to profile' id ='cancelSubmit' onsubmit='return undo(this.form)' action='profileMMU.ejs'>
-
       </form>
-
+        <!--CANCEL AND RETURN TO PROFILE VIEWER, button that looks like a hyperlink-->
+        <form action='/profiler/profilerProc.html' method='POST' id='form'>
+        <input type="hidden" name="id" value='<%= User.id %>'/>
+        <input type ='submit' value ='cancel and return to profile' id ='cancelSubmit'>
+      </form>
     </div><!-- close div for class edit form -->
 
 </body>
