@@ -38,6 +38,13 @@ app.get('/index', (req, res) => {
     res.render('index.ejs', {User: result})
   })
 })
+app.get('/userlist', (req, res) => {
+  var cursor = db.collection('User').find().toArray(function(err, result){
+   if (err) { return console.log(err) }
+   console.log('haanbhai', result)
+   res.render('user.ejs', {User: result})
+ })
+})
 
 app.post('/profiler/profilerProc.html', (req, res) => {
   var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){

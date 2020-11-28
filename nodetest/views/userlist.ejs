@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+</head>
+<body>
+        Non     
+<ul class="User">
+    <% for(var i=0; i<User.length; i++) {%>
+      <li class="User">
+        <span><%= User[i].name %></span>
+        <span><%= User[i].genre %></span>
+        <span><%= User[i].image %></span>
+        
+      </li>
+    <% } %>
+  </ul>
+  <form action="/userlist" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="genre" name="genre">
+    <input type="image" placeholder="profilePicture" name="profilePicture">
+
+  </form>
+</body>
+</html>
