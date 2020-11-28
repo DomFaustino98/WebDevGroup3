@@ -32,16 +32,9 @@
     </script>
     <div id="profile">
         <table>	
-<<<<<<< HEAD
-            <span><%= session.id %></span>
-=======
->>>>>>> de768d2a510fa4cd4894a78efaa37b18488ea1e2
-            <tr><td><span><%= User.name %></span></td></tr>	
+            <tr><td><span><%= User.firstname %></span></td></tr>	
             <tr><td class="image"><script>document.write(user.profilePic)</script></td></tr>
             <tr><td><script>document.write("Bio:"," ", user.bio);</script></td></tr> 
-            <% if (session.id == User.id){
-                %><span>Edit Profile</span><%
-            } %>
         </table>
         <div class="d-flex justify-content-center mt-5">
             <ul class="list-icons">

@@ -50,7 +50,7 @@ app.post('/profiler/profilerProc.html', (req, res) => {
         if (err) return console.log(err)
         var newUser = {id: req.body.id};
         req.session.user = newUser;
-        res.render('profileMMU.ejs', {User: result})
+        res.render('signUp.ejs', {User: result})
       })
   }
 })
@@ -78,11 +78,11 @@ app.post('/profiler/EditProfileProc', (req, res) => {
     var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
       if(result){
         var userUpdate = {id: req.session.user.id};
-        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, favmovie: req.body.favMovie, profilepic: req.body.profilePicURL}, }, function(err, res){
+        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, name: req.body.name, favmovie: req.body.favMovie, profilepic: req.body.profilePicURL}, }, function(err, res){
           if (err) throw err;
-          console.log("successfully updated");
-          res.render('profileMMU.ejs', {User: result})
+          console.log("successfully updated"); 
         })
+    res.render('profileMMU.ejs', {User: result})
   }
 })
   }

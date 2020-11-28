@@ -13,6 +13,36 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/splash.css">
 
+    <!-- Google signin -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script>
+        var googleUser = {};
+        var startApp = function() {
+            gapi.load('auth2', function() {
+                auth2 = gapi.auth2.init({
+                    client_id: '855139029304-hgunpca7m99mplic1fa5i1b8chom2le2.apps.googleusercontent.com',
+                    cookiepolicy: 'single_host_origin'
+                });
+                attachSignin(document.getElementById('my-signin2'));
+            })
+        }
+        function attachSignin(element) {
+            console.log(element.id);
+            auth2.attachClickHandler(element, {},
+                function(googleUser) {
+                    var profile = googleUser.getBasicProfile()
+                    console.log('Logged in as: ' + profile.getName());
+                    document.getElementById('id').value = profile.getId();
+                    document.getElementById('fname').value = profile.getGivenName();
+                    document.getElementById('lname').value = profile.getFamilyName();
+                    document.getElementById('imgUrl').value = profile.getImageUrl();
+                    document.getElementById('email').value = profile.getEmail();
+                    document.getElementById('googleInfo').submit();
+                }, function(error) {
+                    console.log(error);
+                });
+        }
+    </script>
     <title>Movie Meetup</title>
 </head>
 
@@ -32,11 +62,22 @@
                         <p class="header__subtitle">Discuss your favorite genres.</p>
                         <a class="signin text-white btn btn-lg btn-danger mt-2" href="profiler/signup.html">Sign Up</a>
                         <a class="signin text-white btn btn-lg btn-danger mt-2" href="./login.html">Sign In</a>
+                        <!-- Google signin button -->
+                        <div id="my-signin2" class="signin text-white btn btn-lg btn-danger mt-2"><span class="buttonText">Sign in with Google</span></div>
+                        <script>startApp();</script>
                     </section>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Hidden form for submitting user's google info -->
+    <form id="googleInfo" method="POST" action="/profiler/profilerProc.html">
+        <input type="hidden" id="id" name="id">
+        <input type="hidden" id="fname" name="firstname">
+        <input type="hidden" id="lname" name="lastname">
+        <input type="hidden" id="imgUrl" name="imgUrl">
+        <input type="hidden" id="email" name="email">
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
