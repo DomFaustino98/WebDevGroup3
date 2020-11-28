@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+  <title>Sign Up | Sign In -Movie Meet Up</title>
+  <link rel='stylesheet' href='signUp-signIn-style.css'>
+  <!--css for 'login with Google' button-->
+  <!--https://stackoverflow.com/questions/46654248/how-to-display-google-sign-in-button-using-html-->
+
+  <!--favicon originally called '1f37f.svg' from icons8-->
+  <link rel='icon' type='image/png' href='popcorn-favicon-icons8-small.png'>
+
+</head>
+  <body>
+    <div class='hero'>
+      <div class='form-box'>
+        <div class='button-box'>
+          <div id='btn'></div>
+          <button type='button' class='toggle-btn' onclick='signUp()'>Sign Up</button>
+        </div>
+
+        <div class='social-icons'>
+          <div class="col s12 m6 offset-m3 center-align">
+              <a class="oauth-container btn darken-4 white black-text" href="/users/google-oauth/" style="text-transform:none">
+                  <div class="left">
+                      <img width="15px" style="margin-top:4px; margin-right:2px" alt="Google sign-in"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                  </div>
+                  sign in with Google
+              </a>
+          </div>
+
+          <!-- Compiled and minified CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+          <!-- Compiled and minified JavaScript -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+          <!--<img src='fb.png'><img src='tw.png'><img src='gp.png'>-->
+          <!--favicon originally called '1f37f.svg' from icons8-->
+        </div>
+
+
+        <!--ejs for outputting variable-->
+        <form id='signUp' class='input-group' method='POST'  action='/profiler/EditProfileProc'>
+          <input type='text' class='input-field' required placeholder='first name' id='fname' name='fname' value='<%= User.firstname %>'>
+          <input type='text' class='input-field' required placeholder='last name' id='lname' name='lname' value='<%= User.lastname %>'>
+          <input type='text' class='input-field' required placeholder='username' id='username' name='name' value='<%= User.name %>'>
+
+          <!--<input type='checkbox' class='check-box'><span>I agree to the terms of services</span> -->
+          <button type='submit' class='submit-btn'>Register</button>
+        </form>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+
+      // function to horizontally switch between sign in and sign up forms
+      var x = document.getElementById('signIn');
+      var y = document.getElementById('signUp');
+      var z = document.getElementById('btn');
+
+      function signUp(){
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+      }
+
+      /* function to sign in with Google's API
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        var id = profile.getId();
+        var fullName = profile.getName();
+        var givenName = profile.getGivenName();
+        var familyName = profile.getFamilyName();
+        var imgUrl = profile.getImageUrl();
+        var email = profile.getEmail();
+        var id_token = googleUser.getAuthResponse().id_token;
+
+        document.getElementById('fname') = givenName;
+        if(familyName != undefined){
+          document.getElementById('lname') = familyName;
+        }
+        document.getElementById('email') = email;
+        document.getElementById('name').value = givenName + familyName;
+        document.getElementById('image').value = imgUrl;
+
+      } function will be moved to index, data on this page will be retrieved from server*/
+
+    </script>
+
+
+  </body>
+</html>
