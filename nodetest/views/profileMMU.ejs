@@ -34,7 +34,8 @@
         <table>	
             <tr><td><span><%= User.firstname %></span></td></tr>	
             <tr><td class="image"><script>document.write(user.profilePic)</script></td></tr>
-            <tr><td><script>document.write("Bio:"," ", user.bio);</script></td></tr> 
+            <tr><td><script>document.write("Bio:"," ", user.bio);</script></td></tr>
+            <img src="<%= User.profilepic %>" alt="Girl in a jacket" width="500" height="600">
         </table>
         <div class="d-flex justify-content-center mt-5">
             <ul class="list-icons">

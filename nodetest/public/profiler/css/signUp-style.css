@@ -1,0 +1,69 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.page-background{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(thom-milkovic-pG69uMtgzds-unsplash.jpg);
+  /*imgURL for same background as edit-profile: erik-witsoe-GF8VvBgcJ4o-unsplash.jpg*/
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.form-title/*header that says Edit Profile in blue*/
+{
+  color: #1c8adb;/*#1c8adb = light blue*/
+  margin: 8% auto;
+}
+/* white rectangular box that contains the forms*/
+.form-box/*white box that is the form container*/
+{
+  width: 300px;
+  background: transparent;/*#fff = white*/
+  padding: 20px;
+  margin: 4% auto 0;
+  height: 300px;
+  text-align: center;
+  border-radius: none;
+}
+.input-field/*text fields that contain input from user*/
+{
+  border-radius: none;/* box-radius 30px rounds the 90degree edges of text box*/
+  padding: 10px;
+  margin: 15px auto;
+  width: 100%;
+  border-bottom: 100%;
+}
+button
+{
+  color: #fff;
+  background-color: #1c8adb;/*#1c8adb = light blue*/
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 30px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.input-group{
+  top: 180px;
+  position: absolute;
+  width: 280px;
+}
+/*get color codes from https://htmlcolorcodes.com/*/
+.submit-btn{
+  width: 85%;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 10% auto;
+  /*background: #AE1A1A; /*red button*/
+  background: ##1c8adb; /*light blue button*/
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}

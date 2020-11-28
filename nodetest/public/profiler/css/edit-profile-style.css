@@ -1,0 +1,102 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url(erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.edit-form/*white box that is the form container*/
+{
+  width: 300px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;/*#fff = white*/
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+}
+.form-title/*header that says Edit Profile in blue*/
+{
+  color: #1c8adb;/*#1c8adb = light blue*/
+  margin-bottom: 30px;
+}
+.input-box/*text fields that contain input from user*/
+{
+  border-radius: 20px;/*rounds the 90degree edges of text box*/
+  padding: 10px;
+  margin: 10px 0;
+  width: 93%;
+  right: 100px;
+  border: 1px solid #999;
+  outline: none;
+}
+button
+{
+  color: #fff;
+  background-color: #1c8adb;/*#1c8adb = light blue*/
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#cancelSubmit {/*button that looks like a hyperlink*/
+  color:blue;
+  background-color: #fff;*#fff = white*/
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+hr
+{
+  margin-top: 20px;
+  width: 80%;
+}
+<!--text for horizontal rule-->
+.hrText
+{
+  background: #fff;
+  width: 50px;
+  margin: -19px auto 10px;
+}
+.img
+{
+  width: 70px;
+  margin-top: -50px;
+}
+.or
+{
+  margin: 10px 0;
+}
+/* modified css code for customizing input type file button */
+/* https://stackoverflow.com/questions/1944267/how-to-change-the-button-text-of-input-type-file */
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: '  select a file from your computer';
+  font-size: 15px;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: 5px 8px;
+  outline: none;
+  cursor: pointer;
+  width: 90%;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
