@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body{
-	padding: 0;
+	padding: 0px;
+	padding-bottom: 70px;
 	margin: 0;
 	background:#f4f4f4;
 }
@@ -175,4 +176,35 @@ flip card
 #pic2
 {
 	height: 30;
+}
+
+.horizontal-center-2 {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+	top: 0%;
+  -ms-transform: translate(-50%, -0%);
+  transform: translate(-50%, -0%);
+}
+
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.big-boy-button {
+		width: 200px;
+		height: 100px;
+		background-color: #000000;
+		font-size: 50px;
+color: #F97300;
+padding: 0px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+margin:10px;
+
 }
