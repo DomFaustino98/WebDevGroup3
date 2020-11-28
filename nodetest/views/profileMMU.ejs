@@ -16,9 +16,6 @@
 </head>
 <body>
     <script type = "text/javascript">
-        function isValid(){
-            result = confirm("are you sure you want to leave this page?");
-        }
         let url = 'file:///Users/laurashelly/Documents/Bootstrap%20Folder/profile.html?name=Laura&bio=love+dogs&profilePic=IMG_0231.JPG';
         var l = location.search;
         var urlParams = new URLSearchParams(l);
@@ -35,9 +32,13 @@
     </script>
     <div id="profile">
         <table>	
-            <tr><td><script>document.write("Name:"," ", user.name);</script></td></tr>	
+            <span><%= session.id %></span>
+            <tr><td><span><%= User.name %></span></td></tr>	
             <tr><td class="image"><script>document.write(user.profilePic)</script></td></tr>
             <tr><td><script>document.write("Bio:"," ", user.bio);</script></td></tr> 
+            <% if (session.id == User.id){
+                %><span>Edit Profile</span><%
+            } %>
         </table>
         <div class="d-flex justify-content-center mt-5">
             <ul class="list-icons">
@@ -48,7 +49,7 @@
                 <li class="genre"> <i class="fa fa-genre"></i></li>
             </ul>
         </div>
-        <form id="submit" method = "GET" onsubmit="return isValid();" action="editProfile.html">
+        <form id="submit" method = "GET"  action="editProfile">
             <input type = "submit" value = "Edit Profile" id = "submit">
         </form>
     </div>

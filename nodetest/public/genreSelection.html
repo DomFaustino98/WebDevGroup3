@@ -13,15 +13,17 @@
 			<script type="text/javascript" src="js/jquery.min.js"></script>
 			<script type="text/javascript" src="js/bootstrap.min.js"></script>
 			<script type="text/javascript" src='js/main.js'></script>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 <body>
   <!-- navbar -->
 
 <!-- portfolio -->
-<form name="order" action="pageNameHere.html" method="get">
+<form name="genreForm" action="pageNameHere.html" method="POST">
 <div class="portfolio" id="portfolio">
-	<button class="btn btn-primary" type="submit">Submit</button>
-     <h1 class="text-center">Main Movie Genres</h1>
+	<button class="btn btn-primary" type="submit" id="submitButton">Submit</button>
+	 <h1 class="text-center">Main Movie Genres</h1>
+	 <input type='hidden' id='genres' />
 
 		 <div class="container">
 	    <div class="row">
@@ -1001,4 +1003,13 @@
 </div>
 </form>
 </body>
+<script> 
+	$("#submitButton").click(function( event ){
+		console.log("here");
+	var formData = JSON.stringify($("#genreForm").serializeArray());
+	console.log(formData);
+	document.getElementById('genres').value = formData;
+	event.preventDefault();
+	});
+</script>
 </html>
