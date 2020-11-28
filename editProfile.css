@@ -1,16 +1,15 @@
 body{
     background-color: black; 
-    background-image: url('https://www.altadenalibrary.org/wp-content/uploads/2018/10/cinema.png');
 }
 #userInfo{
     font-size: 150%;
-    color: rgb(177, 165, 73);
+    color: black;
     font-family: verdana;
-    border-style: double;
-    border-color: rgb(177, 165, 73);
+    border-style: solid;
+    border-color: white;
     border-radius: 30px;
     border-width: 10px;
-    background-color: rgb(97, 0, 0); 
+    background-color: rgb(0, 187, 255); 
     display: inline-block;
 }
 
@@ -22,37 +21,37 @@ body{
 
 #cancelSubmit{
     padding:5px 15px; 
-    background: rgb(97, 0, 0);
+    background: rgb(0, 187, 255);
     border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
     border: solid;
-    color: rgb(177, 165, 73);
+    border-color: white;
     position: fixed;
     bottom: 300px;
     right: 70%;
 }
 #submit{
     padding:5px 15px; 
-    background: rgb(97, 0, 0);
+    background: rgb(0, 187, 255);
     border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
     border: solid;
-    color: rgb(177, 165, 73);
+    border-color: white;
     position: fixed;
     bottom: 300px;
     right: 20%;
 }
 #changePic{
-        padding:5px 15px; 
-        background: rgb(97, 0, 0);
-        border:0 none;
-        -webkit-border-radius: 5px;
-        border-radius: 5px; 
-        border: solid;
-        color: rgb(177, 165, 73);
-        position: fixed;
-        bottom: 300px;
-        right: 40%;
+    padding:5px 15px; 
+    background: rgb(0, 187, 255);
+    border:0 none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    border: solid;
+    border-color: white;
+    position: fixed;
+    bottom: 300px;
+    right: 40%;
 }
