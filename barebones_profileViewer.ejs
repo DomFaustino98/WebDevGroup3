@@ -17,8 +17,7 @@
     <div id="profile">
         <label><%= User.name %></label>
         <label><%= User.firstname %></label><label> </label><label><%= User.lastname %></label>
-        <!-- need a database query here for the profile image to be seen -->
-        <!--image will go here-->
+        <%= User.profilepic %>
         <p>Bio: </p><label><%= User.bio %></label>
         <p>Fav Movie: </p><label><%= User.favmovie %></label>
         <!-- insert fav genres here -->
