@@ -59,7 +59,8 @@
         <form action='/api/images' method="post" enctype="multipart/form-data">
             <fieldset>
                 <div id="wrapper">
-                    <input type="file" accept="image/*" onchange="preview_image(event)">
+                    <!-- Need a database query to display the image using Cloudinary -->
+                    <input type="file" accept="image/*" onchange="preview_image(event)" value = 'imageUrl'>
                     <img id="output_image"/>
                 </div>
             </fieldset>
