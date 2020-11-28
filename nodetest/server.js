@@ -50,7 +50,7 @@ app.post('/profiler/profilerProc.html', (req, res) => {
         if (err) return console.log(err)
         var newUser = {id: req.body.id};
         req.session.user = newUser;
-        res.render('signUp.ejs', {User: result})
+        res.render('signUp.ejs', {User: req.body})
       })
   }
 })
