@@ -9,17 +9,19 @@
 <ul class="User">
     <% for(var i=0; i<User.length; i++) {%>
       <li class="User">
+        <span><%= User[i].image %></span>
         <span><%= User[i].name %></span>
         <span><%= User[i].genre %></span>
-        <span><%= User[i].image %></span>
+    
         
       </li>
     <% } %>
   </ul>
   <form action="/userlist" method="POST">
+    <input type="image" placeholder="profilePicture" name="profilePicture">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="genre" name="genre">
-    <input type="image" placeholder="profilePicture" name="profilePicture">
+
 
   </form>
 </body>
