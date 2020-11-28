@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <title>Profile Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stil.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
+    <script src="stil.js"></script>
+</head>
+<body>
+    <script type = "text/javascript">
+        function isValid(){
+            result = confirm("are you sure you want to leave this page?");
+        }
+        //the code below if my botched way of saying that if the user is viewing a profile that is not their own, then hide the edit profile button lol
+        if(User.id != id){
+            document.getElementById("editProfile").style.visibility = "hidden";
+        }
+    </script>
+    <div id="profile">
+        <label>First Name: </label><label><%= User.fname %></label>
+        <label> Last Name: </label><label><%= User.lname %></label>
+        <p>Username: </p><label><%= User.username %></label>
+        <!-- need a database query here for the profile image to be seen -->
+        <img src=imageURL />
+        <p>Bio: </p><label><%= User.bio %></label>
+        <p>Fav Movie: </p><label><%= User.favmovie %></label>
+        <!-- insert fav genres here -->
+        <button value = "Edit Profile" id = "editProfile" onclick = "location.href = 'editProfile.ejs'"></button>
+        <button value = "Message Me" id = "messageMe" onclick = "location.href = 'editProfile.ejs'"></button>
+    </div>
+</body>
+</html>
