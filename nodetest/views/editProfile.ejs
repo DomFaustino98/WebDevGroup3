@@ -9,24 +9,14 @@
 
 <script type = 'text/javascript' src='js/bootstrap-filestyle.min.js'>
 
-  function previewProfileImage( uploader ){
-   //ensure a file was selected
-   if (uploader.files && uploader.files[0]){
-       var imageFile = uploader.files[0];
-       var reader = new FileReader();
-       reader.onload = function (e) {
-           //set the image data as source
-           $('#profileImage').attr('src', e.target.result);
-       }
-       reader.readAsDataURL( imageFile );
+  function preview_image(event) {
+     var reader = new FileReader();
+     reader.onload = function(){
+       var output = document.getElementById('output_image');
+       output.src = reader.result;
+     }
+     reader.readAsDataURL(event.target.files[0]);
    }
-   $('#imageUpload').change(function(){
-       previewProfileImage( this );
-   });
-   $('#profileImage').click(function(e) {
-       $('#imageUpload').click();
-   });
-  }
 
   function isDone(){
    result = confirm('Done changing your profile?');
@@ -64,9 +54,8 @@
         <button type='submit' value='edit genres' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>
 
         <p>Profile Picture</p>
-        <input type='text' class ='input-box' id='imageUrl' placeholder='enter profile photo URL' capture>
-        <p class ='or'>or</p>
-        <input type='file' class='custom-file-input' capture id='imageFile' name='profilePicURL' value="<%= User.profilepic %>" > <br><br><hr>
+        <input type="file" name="profilepic" accept="image/*" onchange="preview_image(event)" value="<%= User.profilepic %>" > 
+        <img id="output_image"/> <br><br><hr>
         <!--SAVE AND RETURN TO PROFILE VIEWER-->
         <button type='submit' class='btn' id='submit'>save</button>
       </form>
