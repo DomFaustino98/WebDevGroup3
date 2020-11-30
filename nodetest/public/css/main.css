@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body{
-	padding: 0;
+	padding: 0px;
+	padding-bottom: 70px;
 	margin: 0;
 	background:#f4f4f4;
 }
@@ -55,7 +56,6 @@ h2 {
     top: 30%;
     margin: auto;
     padding: 2em;
-
 }
 .description h1{
 	color:#F97300 ;
@@ -176,3 +176,58 @@ flip card
 {
 	height: 30;
 }
+
+.horizontal-center-2 {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+	top: 0%;
+  -ms-transform: translate(-50%, -0%);
+  transform: translate(-50%, -0%);
+}
+
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.big-boy-button {
+		width: 200px;
+		height: 100px;
+		background-color: #000000;
+		font-size: 50px;
+color: #F97300;
+padding: 0px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+margin:10px;
+
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  ul.topnav li {float: left;}
+
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+  ul.topnav li a.active {background-color: #888;}
+
+  ul.topnav li.right {float: right;}
