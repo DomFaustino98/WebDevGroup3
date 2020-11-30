@@ -1,0 +1,51 @@
+<!--TURN IN-->
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+<title> Profile | Movie Meet Up </title>
+<link rel='stylesheet' href='public/profiler/css/profile-viewer-style.css'>
+<!--favicon originally called '1f37f.svg' from icons8-->
+<link rel='icon' type='image/png' href='/images/popcorn-favicon-icons8-small.png'>
+</head>
+
+
+<script type = 'text/javascript'>
+  function isValid(){
+            result = confirm('Are you sure you want to leave this page?');
+        }
+        //the code below if my botched way of saying that if the user is viewing a profile that is not their own, then hide the edit profile button lol
+       if(User.id != id){
+           document.getElementById('editProfileLink').style.visibility = 'hidden';
+       }
+</script>
+
+<body>
+
+    <div class='edit-form'>
+
+      <h1 class='form-title'><%= User.name %></h1>
+      <h2><%= User.id %></h2>
+      <form action='profileMMU.html' method='POST' id='form'>
+        <%= User.profilepic %>
+        <p><%= User.bio %></p>
+        <hr>
+        <!--INSERT FAVORITE MOVIE GENRES HERE-->
+        <p>My Top Genres</p>
+        <p>genre1 | genre2 | genre3 </p>
+        <label>My favorite movie is <%= User.favmovie %></label>
+
+
+       <!-- button to use mailto to send an email -->
+       <button><a href='mailto:<%= User.email %>' style='color:#fff; text-decoration:none'>send me a message</a></button>
+
+        <!--Directs user to profileMMU.ejs to edit profile-->
+        <a href='edit-profile.ejs' id='editProfileLink' style='text-decoration:none;'>edit profile</a>
+        <!--<a href='profileMMU.ejs' style='text-decoration:none;'>edit profile</a>-->
+
+      </form>
+
+    </div><!-- close div for class edit form -->
+
+</body>
+
+</html>
