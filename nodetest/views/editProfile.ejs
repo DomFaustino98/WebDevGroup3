@@ -24,21 +24,21 @@
   function toGenres(){
    result = confirm('To Genre Selection Page?');
   }
-  function undo(f){
-   f.fname.value = User.givenName;
-   f.lname.value = User.familyName;
-   f.username.value = User.username;
-   f.bio.value = User.bio;
-   f.favMovie.value = User.favMovie;
-   f.profileImage.value = User.profilePic;
-   result = confirm('Undo changes?');
-  }
 
 <body>
 
     <div class='edit-form'>
 
       <h1 class='form-title'> Edit Profile </h1>
+      
+      <form method="POST" id='fileupload'enctype="multipart/form-data" action="/upload">
+        <p>Profile Picture</p>
+        <input type="file" id="file" name="profilepic" accept="image/*" onchange="preview_image(event)" value="<%= User.profilepic %>" > 
+        <img id="output_image"/> <br><br><hr>
+        <!--SAVE AND RETURN TO PROFILE VIEWER-->
+        <button type='submit' class='btn' id='submit'>upload</button>
+      </form>
+      
       <form action='/profiler/EditProfileProc' method='POST' id='form'>
 
         <p>About You</p>
@@ -49,18 +49,12 @@
         <input type='text' class='input-box' maxlength='280' placeholder='bio' id='bio' name='bio' value='<%= User.bio %>'>
         <input type='text' class='input-box' maxlength='280' placeholder='favorite movie' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
         <!-- button to direct user to GENERE SELECT PAGE -->
-        <button type='submit' value='edit genres' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>  
-      </form>
-
-        <form method="POST" id='fileupload'enctype="multipart/form-data" action="/upload">
-        <p>Profile Picture</p>
-        <input type="file" id="file" name="profilepic" accept="image/*" value="<%= User.profilepic %>" > 
-        <img id="output_image"/> <br><br><hr>
-        <!--SAVE AND RETURN TO PROFILE VIEWER-->
+        <button type='button' value='edit genres' id='pickGenres' onclick='return toGenres()' target = "_blank" action='genreSelection.html'>edit genres</button>  
         <button type='submit' class='btn' id='submit'>save</button>
       </form>
+
         <!--CANCEL AND RETURN TO PROFILE VIEWER, button that looks like a hyperlink-->
-        <form action='/profiler/profilerProc.html' method='POST' id='form'>
+      <form action='/profiler/profilerProc.html' method='POST' id='form'>
         <input type="hidden" name="id" value='<%= User.id %>'/>
         <input type ='submit' value ='cancel and return to profile' id ='cancelSubmit'>
       </form>
