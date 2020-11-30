@@ -2,8 +2,11 @@ const express = require('express')
 const bodyParser= require('body-parser') 
 const path = require('path');
 const app = express(); 
+const fs = require("fs");
+const http = require("http");
 const MongoClient = require('mongodb').MongoClient  
-
+const httpServer = http.createServer(app);
+const multer = require("multer");
 
 var uri = 'mongodb+srv://studentUser:iamstudent@cluster0.y9n1j.mongodb.net/movieDB?retryWrites=true&w=majority';
 var session = require('express-session');
@@ -73,18 +76,23 @@ app.post('/pageNameHere.html', (req, res) => {
   console.log(req.body);
 })
 
+const upload = multer({
+  dest: "/images"
+  // you might also want to set some limits: https://github.com/expressjs/multer#limits
+});
+
 app.post('/profiler/EditProfileProc', (req, res) => {
   if(req.session.user.id){
     var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
       if(result){
         var userUpdate = {id: req.session.user.id};
-        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, name: req.body.name, favmovie: req.body.favMovie, profilepic: req.body.profilePicURL}, }, function(err, res){
+        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, name: req.body.name, favmovie: req.body.favMovie, profilepic: req.body.profilepic}, }, function(err, res){
           if (err) throw err;
           console.log("successfully updated"); 
         })
-    res.render('profileMMU.ejs', {User: result})
-  }
-})
+        res.render('profileMMU.ejs', {User: result})
+      }
+    })
   }
 })
 
@@ -107,3 +115,24 @@ function checkSignIn(req, res){
      next(err);  //Error, trying to access unauthorized page!
   }
 }
+
+// IMAGE UPLOAD CODE
+const handleError = (err, res) => {
+  res
+    .status(500)
+    .contentType("text/plain")
+    .end("Oops! Something went wrong!");
+};
+
+app.post("/upload", upload.single("profilepic" /* name attribute of <file> element in your form */), (req, res) => {
+    console.log(req.file);
+    const tempPath = req.file.path;
+    const name = req.file.originalname;
+    const targetPath = path.join(__dirname, "./public/profiler/images/" + name);
+      fs.rename(tempPath, targetPath, err => {
+        if (err) return handleError(err, res);
+        var userUpdate = {id: req.session.user.id};
+        db.collection('User').update(userUpdate, {$set: {profilepic: name}});
+      });
+  }
+);

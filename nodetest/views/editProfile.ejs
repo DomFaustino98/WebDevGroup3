@@ -4,7 +4,7 @@
 <title> Edit Profile | Movie Meet Up </title>
 <link rel='stylesheet' href='css/edit-profile-style.css'>
 <!--favicon originally called '1f37f.svg' from icons8-->
-<link rel='icon' type='image/png' href='profiler/popcorn-favicon-icons8-small.png'>
+<link rel='icon' type='image/png' href='../images/popcorn-favicon-icons8-small.png'>
 </head>
 
 <script type = 'text/javascript' src='js/bootstrap-filestyle.min.js'>
@@ -35,6 +35,11 @@
   }
 
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+   console.log("Test");
+   $("#file").change(function() { this.form.submit(); });
+   console.log("Test");
+</script>
 
 <body>
 
@@ -51,10 +56,12 @@
         <input type='text' class='input-box' maxlength='280' placeholder='bio' id='bio' name='bio' value='<%= User.bio %>'>
         <input type='text' class='input-box' maxlength='280' placeholder='favorite movie' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
         <!-- button to direct user to GENERE SELECT PAGE -->
-        <button type='submit' value='edit genres' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>
+        <button type='submit' value='edit genres' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>  
+      </form>
 
+        <form method="POST" id='fileupload'enctype="multipart/form-data" action="/upload">
         <p>Profile Picture</p>
-        <input type="file" name="profilepic" accept="image/*" onchange="preview_image(event)" value="<%= User.profilepic %>" > 
+        <input type="file" id="file" name="profilepic" accept="image/*" value="<%= User.profilepic %>" > 
         <img id="output_image"/> <br><br><hr>
         <!--SAVE AND RETURN TO PROFILE VIEWER-->
         <button type='submit' class='btn' id='submit'>save</button>
