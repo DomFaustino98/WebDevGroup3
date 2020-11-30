@@ -3,7 +3,7 @@
 <html lang ='en'>
 <head>
 <title> Profile | Movie Meet Up </title>
-<link rel='stylesheet' href='public/profiler/css/profile-viewer-style.css'>
+<link rel='stylesheet' href='css/profile-viewer-style.css'>
 <!--favicon originally called '1f37f.svg' from icons8-->
 <link rel='icon' type='image/png' href='/images/popcorn-favicon-icons8-small.png'>
 </head>
@@ -24,14 +24,13 @@
     <div class='edit-form'>
 
       <h1 class='form-title'><%= User.name %></h1>
-      <h2><%= User.id %></h2>
       <form action='profileMMU.html' method='POST' id='form'>
-        <%= User.profilepic %>
+        <img src='images/<%= User.profilepic %>' style="width:100%; max-width:300px;"/>
         <p><%= User.bio %></p>
         <hr>
         <!--INSERT FAVORITE MOVIE GENRES HERE-->
         <p>My Top Genres</p>
-        <p>genre1 | genre2 | genre3 </p>
+        <p><%= User.likedgenres %></p>
         <label>My favorite movie is <%= User.favmovie %></label>
 
 
@@ -39,7 +38,9 @@
        <button><a href='mailto:<%= User.email %>' style='color:#fff; text-decoration:none'>send me a message</a></button>
 
         <!--Directs user to profileMMU.ejs to edit profile-->
-        <a href='edit-profile.ejs' id='editProfileLink' style='text-decoration:none;'>edit profile</a>
+        <% if (User.id == session.id){ %>
+        <a href='/profiler/editProfile' id='editProfileLink' style='text-decoration:none;'>edit profile</a>
+        <% } %>
         <!--<a href='profileMMU.ejs' style='text-decoration:none;'>edit profile</a>-->
 
       </form>

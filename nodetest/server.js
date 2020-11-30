@@ -41,6 +41,13 @@ app.get('/', (req, res) => {
   res.sendFile('index.html');
 })
 
+app.get('/userlist', (req, res) => {
+  var cursor = db.collection('User').find().toArray(function(err, result){
+   if (err) { return console.log(err) }
+   res.render('userlist.ejs', {User: result})
+ })
+})
+
 app.post('/profiler/profilerProc.html', (req, res) => {
   var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){
     if(result){
@@ -59,6 +66,12 @@ app.post('/profiler/profilerProc.html', (req, res) => {
 })
 })
 
+app.post('/profiler/viewProfile.html', (req, res) => {
+  var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){
+      res.render('profileMMU.ejs', {User: result, session: req.session.user})
+  })
+})
+
 app.post('/profiler/editProfile.html', (req, res) => {
   res.redirect('/')
 })
@@ -68,17 +81,26 @@ res.sendFile(__dirname + '/index.ejs')
 })
 
 app.get('/profileMMU', checkSignIn, function(req, res){
-  console.log("here")
   res.render('profileMMU.ejs', {User: result})
 });
 
-app.post('/pageNameHere.html', (req, res) => {
-  console.log(req.body);
+app.post('/profiler/uploadGenres', (req, res) => {
+  if(req.session.user.id){
+    var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
+      if(result){
+        var userUpdate = {id: req.session.user.id};
+        db.collection('User').update(userUpdate, {$set: {likedgenres: req.body.genres}, }, function(err, res){
+          if (err) throw err;
+          console.log("successfully updated"); 
+        })
+        res.render('profileMMU.ejs', {User: result, session: req.session.user})
+      }
+    })
+  }
 })
 
 const upload = multer({
   dest: "/images"
-  // you might also want to set some limits: https://github.com/expressjs/multer#limits
 });
 
 app.post('/profiler/EditProfileProc', (req, res) => {
@@ -86,11 +108,12 @@ app.post('/profiler/EditProfileProc', (req, res) => {
     var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
       if(result){
         var userUpdate = {id: req.session.user.id};
-        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, name: req.body.name, favmovie: req.body.favMovie, profilepic: req.body.profilepic}, }, function(err, res){
+        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, bio: req.body.bio, name: req.body.name, favmovie: req.body.favMovie}, }, function(err, res){
           if (err) throw err;
-          console.log("successfully updated"); 
+          console.log("successfully updated");
         })
-        res.render('profileMMU.ejs', {User: result})
+        console.log(result);
+        res.render('profileMMU.ejs', {User: result, session: req.session.user})
       }
     })
   }

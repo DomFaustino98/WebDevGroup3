@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+</head>
+<body>
+<ul class="User">
+    <% for(var i=0; i<User.length; i++) {%>
+      <li class="User <%= i %>">
+        <% if (User[i].profilepic != undefined){ %> 
+        <img src='profiler/images/<%= User[i].profilepic %>' style="width: 200px"/>
+        <% } %>
+        <br>
+        <span><%= User[i].firstname %> <%= User[i].lastname %></span><Br>
+        <% if (User[i].favmovie != undefined) { %>
+        <span>Favorite Movie: <%= User[i].favmovie %></span>
+        <% } %>
+      </li>
+      <br>
+      <form action='/profiler/viewProfile.html' method='POST' id='form'>
+      <input type="hidden" name="id" value='<%= User[i].id %>'/>
+      <button type="submit">View Profile</button>
+      </form>
+<hr>
+    <% } %>
+</body>
+</html>

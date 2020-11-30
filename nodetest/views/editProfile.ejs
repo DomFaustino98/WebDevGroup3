@@ -7,8 +7,7 @@
 <link rel='icon' type='image/png' href='../images/popcorn-favicon-icons8-small.png'>
 </head>
 
-<script type = 'text/javascript' src='js/bootstrap-filestyle.min.js'>
-
+<script>
   function preview_image(event) {
      var reader = new FileReader();
      reader.onload = function(){
@@ -17,14 +16,16 @@
      }
      reader.readAsDataURL(event.target.files[0]);
    }
-
   function isDone(){
    result = confirm('Done changing your profile?');
   }
   function toGenres(){
    result = confirm('To Genre Selection Page?');
   }
-
+  function uploadAlert() {
+  alert("upload successful!");
+  }
+</script>
 <body>
 
     <div class='edit-form'>
@@ -36,12 +37,13 @@
         <input type="file" id="file" name="profilepic" accept="image/*" onchange="preview_image(event)" value="<%= User.profilepic %>" > 
         <img id="output_image"/> <br><br><hr>
         <!--SAVE AND RETURN TO PROFILE VIEWER-->
-        <button type='submit' class='btn' id='submit'>upload</button>
+        <button type='submit' class='btn' id='upload' onclick='uploadAlert()'>upload</button>
       </form>
       
       <form action='/profiler/EditProfileProc' method='POST' id='form'>
 
         <p>About You</p>
+        <input type="hidden" name="id" value="<%= User.id %>"/>
         <label>first name</label><input type='text' class='input-box' required name='fname' id='fname' value='<%= User.firstname %>'>
         <label>last name</label><input type='text' class='input-box' required name='lname' id='lname' value='<%= User.lastname %>'>
         <label>username</label><input type='text' class='input-box' maxlength='30'required name='name' id='name' value='<%= User.name %>'>
@@ -50,12 +52,12 @@
         <label>favorite movie</label><input type='text' class='input-box' maxlength='280' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
         
         <!-- button to direct user to GENERE SELECT PAGE -->
-        <button type='button' value='edit genres' id='pickGenres' onclick='return toGenres()' target = "_blank" action='genreSelection.html'>edit genres</button>  
+        <button type='button' value='edit genres' id='pickGenres' action="../genreSelection.html" target = "_blank">edit genres</button>  
         <button type='submit' class='btn' id='submit'>save</button>
       </form>
 
         <!--CANCEL AND RETURN TO PROFILE VIEWER-->
-      <form action='/profiler/profilerProc.html' method='POST' id='form'>
+      <form action='/profiler/viewProfile.html' method='POST' id='form'>
         <input type="hidden" name="id" value='<%= User.id %>'/>
          <a href='/profiler/profilerProc.html'>cancel and return to profile</a>
       </form>
