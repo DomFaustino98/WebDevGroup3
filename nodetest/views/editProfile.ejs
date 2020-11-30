@@ -6,7 +6,7 @@
 <!--favicon originally called '1f37f.svg' from icons8-->
 <link rel='icon' type='image/png' href='../images/popcorn-favicon-icons8-small.png'>
 </head>
-
+<script>
   function preview_image(event) {
      var reader = new FileReader();
      reader.onload = function(){
@@ -22,7 +22,10 @@
   function toGenres(){
    result = confirm('To Genre Selection Page?');
   }
-
+  function uploadAlert() {
+  alert("upload successful!");
+  }
+</script>
 <body>
 
     <div class='edit-form'>
@@ -34,7 +37,7 @@
         <input type="file" id="file" name="profilepic" accept="image/*" onchange="preview_image(event)" value="<%= User.profilepic %>" > 
         <img id="output_image"/> <br><br><hr>
         <!--SAVE AND RETURN TO PROFILE VIEWER-->
-        <button type='submit' class='btn' id='submit'>upload</button>
+        <button class='btn'onclick='uploadAlert()' id='upload'>upload</button>
       </form>
       
       <form action='/profiler/EditProfileProc' method='POST' id='form'>
