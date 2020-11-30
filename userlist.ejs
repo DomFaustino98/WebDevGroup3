@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+</head>
+<body>
+        Non
+<ul class="User">
+    <% for(var i=0; i<User.length; i++) {%>
+      <li class="User">
+        <span><%= User[i].image %></span>
+        <span><%= User[i].name %></span>
+        <span><%= User[i].genre %></span>
+      </li>
+      <br>
+      <button type="button">Start Chat</button>
+      <button type="button">View Profile</button>
+<hr>
+    <% } %>
+  </ul>
+  <form action="/userlist" method="POST">
+    <input type="image" placeholder="profilePicture" name="profilePicture">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="genre" name="genre">
+
+
+  </form>
+</body>
+</html>
