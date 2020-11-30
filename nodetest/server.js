@@ -37,7 +37,10 @@ app.listen(3000, function() {
 })
 
 
+// GET REQUESTS - THIS ALLOWS THE SERVER TO ROUTE THE USER AND RENDER A PAGE BASED ON THE URL REQUEST //
+// -------------------------------------------------------------------------------------------------- // 
 app.get('/', (req, res) => {
+  req.session.user = "";
   res.sendFile('index.html');
 })
 
@@ -47,6 +50,27 @@ app.get('/userlist', (req, res) => {
    res.render('userlist.ejs', {User: result})
  })
 })
+
+app.get('/profiler/myprofile', (req, res) => { // THIS CAN ONLY BE ACCESSED BY "VIEW PROFILE" IN THE HEADER, WILL ALWAYS BE USERS PROFILE
+  var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
+    if(result){
+      res.render('profileMMU.ejs', {User: result, session: req.session.user})
+    }
+  }) 
+})
+
+app.get('/profiler/editProfile', (req, res) => {
+  if(req.session.user.id){
+    var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
+    if (result){
+      res.render('editProfile.ejs', {User: result})
+    }
+  })
+}
+})
+
+// -------------------------------------------------------------------------------------------------- //
+// POST REQUESTS - THIS ALLOWS THE SERVER TO RENDER/REROUTE THE USER BASED ON POSTED DATA FROM ANOTHER PAGE // 
 
 app.post('/profiler/profilerProc.html', (req, res) => {
   var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){
@@ -80,9 +104,6 @@ app.post('/profile.html', (req, res) => {
 res.sendFile(__dirname + '/index.ejs')
 })
 
-app.get('/profileMMU', checkSignIn, function(req, res){
-  res.render('profileMMU.ejs', {User: result})
-});
 
 app.post('/profiler/uploadGenres', (req, res) => {
   if(req.session.user.id){
@@ -98,10 +119,6 @@ app.post('/profiler/uploadGenres', (req, res) => {
     })
   }
 })
-
-const upload = multer({
-  dest: "/images"
-});
 
 app.post('/profiler/EditProfileProc', (req, res) => {
   if(req.session.user.id){
@@ -119,27 +136,13 @@ app.post('/profiler/EditProfileProc', (req, res) => {
   }
 })
 
-app.get('/profiler/editProfile', (req, res) => {
-  if(req.session.user.id){
-    var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){
-    if (result){
-      res.render('editProfile.ejs', {User: result})
-    }
-  })
-}
-})
+// -------------------------------------------------------------------------------------------------- //
+// IMAGE UPLOAD CODE - THIS IS NECESSARY FOR ALLOWING USERS TO UPLOAD THEIR OWN PHOTOS FROM THE PROFILE EDITOR //
 
-function checkSignIn(req, res){
-  if(req.session.user){
-     next();     //If session exists, proceed to page
-  } else {
-     var err = new Error("Not logged in!");
-     console.log(req.session.user);
-     next(err);  //Error, trying to access unauthorized page!
-  }
-}
+const upload = multer({ // Necessary to define the destination when uploading files
+  dest: "/images"
+});
 
-// IMAGE UPLOAD CODE
 const handleError = (err, res) => {
   res
     .status(500)
@@ -155,7 +158,7 @@ app.post("/upload", upload.single("profilepic" /* name attribute of <file> eleme
       fs.rename(tempPath, targetPath, err => {
         if (err) return handleError(err, res);
         var userUpdate = {id: req.session.user.id};
-        db.collection('User').update(userUpdate, {$set: {profilepic: name}});
+        db.collection('User').update(userUpdate, {$set: {profilepic: "images/" + name}});
       });
   }
 );

@@ -41,16 +41,20 @@
 
 <ul class="topnav">
     <li><a class="active" href="./userlist">User List</a></li>
-    <li><a href="./profiler/myprofile" >View Profile</a></li>
-    <li><a href="./">Log Out</a></li>
+    <li><a href="/profiler/myprofile" >View Profile</a></li>
+    <li><a href="/">Log Out</a></li>
 </ul>
 
 <ul class="User">
     <% for(var i=0; i<User.length; i++) {%>
       <li class="User <%= i %>">
-        <% if (User[i].profilepic != undefined){ %>
-        <img src='profiler/images/<%= User[i].profilepic %>' style="width: 200px"/>
-        <% } %>
+        <% if (User[i].profilepic != undefined){
+              if(User[i].profilepic.includes("images/")){ %> <!-- This means the user uploaded their picture from our website...-->
+                <img src='profiler/<%= User[i].profilepic %>' style="width: 200px"/><%
+              } else { %> <!-- This means the user brought their profile picture over from google - no need to store this on our server -->
+                <img src='<%= User[i].profilepic %>' style="width: 200px"/><%
+              }
+            } %>
         <br>
         <span><%= User[i].firstname %> <%= User[i].lastname %></span><Br>
         <% if (User[i].favmovie != undefined) { %>

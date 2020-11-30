@@ -54,16 +54,18 @@ ul.topnav {
 <body>
 
   <ul class="topnav">
-      <li><a href="./userlist">User List</a></li>
-      <li><a class="active" href="./profiler/myprofile" >View Profile</a></li>
-      <li><a href="./">Log Out</a></li>
+      <li><a href="../userlist">User List</a></li>
+      <li><a class="active" href="./myprofile" >View Profile</a></li>
+      <li><a href="../">Log Out</a></li>
   </ul>
 
     <div class='edit-form'>
 
       <h1 class='form-title'><%= User.name %></h1>
       <form action='profileMMU.html' method='POST' id='form'>
-        <img src='images/<%= User.profilepic %>' style="width:100%; max-width:300px;"/>
+        <% if (User.profilepic != undefined) { %>
+        <img src='<%= User.profilepic %>' style="width:100%; max-width:300px;"/>
+        <% } %>
         <p><%= User.bio %></p>
         <hr>
         <!--INSERT FAVORITE MOVIE GENRES HERE-->
