@@ -42,22 +42,24 @@
       <form action='/profiler/EditProfileProc' method='POST' id='form'>
 
         <p>About You</p>
-        <input type='text' class='input-box' required placeholder='first name' name='fname' id='fname' value='<%= User.firstname %>'>
-        <input type='text' class='input-box' required placeholder='last name' name='lname' id='lname' value='<%= User.lastname %>'>
-        <input type='text' class='input-box' maxlength='30'required placeholder='username' name='name' id='name' value='<%= User.name %>'>
+        <label>first name</label><input type='text' class='input-box' required name='fname' id='fname' value='<%= User.firstname %>'>
+        <label>last name</label><input type='text' class='input-box' required name='lname' id='lname' value='<%= User.lastname %>'>
+        <label>username</label><input type='text' class='input-box' maxlength='30'required name='name' id='name' value='<%= User.name %>'>
         <!-- note: bio(includes max length) and favorite movie are not set to required -->
-        <input type='text' class='input-box' maxlength='280' placeholder='bio' id='bio' name='bio' value='<%= User.bio %>'>
-        <input type='text' class='input-box' maxlength='280' placeholder='favorite movie' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
+        <label>bio</label><input type='text' class='input-box' maxlength='280' id='bio' name='bio' value='<%= User.bio %>'>
+        <label>favorite movie</label><input type='text' class='input-box' maxlength='280' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
+        
         <!-- button to direct user to GENERE SELECT PAGE -->
         <button type='button' value='edit genres' id='pickGenres' onclick='return toGenres()' target = "_blank" action='genreSelection.html'>edit genres</button>  
         <button type='submit' class='btn' id='submit'>save</button>
       </form>
 
-        <!--CANCEL AND RETURN TO PROFILE VIEWER, button that looks like a hyperlink-->
+        <!--CANCEL AND RETURN TO PROFILE VIEWER-->
       <form action='/profiler/profilerProc.html' method='POST' id='form'>
         <input type="hidden" name="id" value='<%= User.id %>'/>
-        <input type ='submit' value ='cancel and return to profile' id ='cancelSubmit'>
+         <a href='/profiler/profilerProc.html'>cancel and return to profile</a>
       </form>
+       
     </div><!-- close div for class edit form -->
 
 </body>
