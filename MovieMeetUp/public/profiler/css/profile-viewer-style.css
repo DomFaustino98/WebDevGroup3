@@ -6,7 +6,7 @@ body
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-image: url(..images/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
+  background-image: url(../images/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
   background-position: center center;
 }
 .edit-form/*white box that is the form container*/
