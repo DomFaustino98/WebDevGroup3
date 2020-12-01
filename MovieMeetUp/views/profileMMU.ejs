@@ -45,10 +45,13 @@ ul.topnav {
   function isValid(){
             result = confirm('Are you sure you want to leave this page?');
         }
-        //the code below if my botched way of saying that if the user is viewing a profile that is not their own, then hide the edit profile button lol
-       if(User.id != id){
-           document.getElementById('editProfileLink').style.visibility = 'hidden';
-       }
+      
+        window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
 </script>
 
 <body>
