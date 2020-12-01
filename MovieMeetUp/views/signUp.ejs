@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+  <title>Sign Up | Movie Meet Up</title>
+  <link rel='stylesheet' href='css/signUp-style.css'>
+  <!--favicon originally called '1f37f.svg' from icons8-->
+  <link rel='icon' type='image/png' href='profiler/popcorn-favicon-icons8-small.png'>
+
+</head>
+  <body>
+    <div class='page-background'>
+
+      <div class='form-box'>
+          <h1 class='form-title'>Sign Up</h1>
+
+          <!--ejs for outputting variable-->
+        <form id='signUp' class='input-group' method='POST'  action='/profiler/EditProfileProc'>
+          <input type='text' class='input-field' required placeholder='first name' id='fname' name='fname' value='<%= User.firstname %>'>
+          <input type='text' class='input-field' required placeholder='last name' id='lname' name='lname' value='<%= User.lastname %>'>
+          <input type='text' class='input-field' required placeholder='username' id='username' name='name' value='<%= User.name %>'>
+
+          <!-- button to direct user to GENERE SELECT PAGE -->
+          <button type='submit' value='edit genres' class='submit-btn'id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>next</button>
+          <!-- button to direct user to GENERE SELECT PAGE as written in editProfile.ejs-->
+          <!--<button type='submit' value='edit genres' class='btn' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>-->
+        </form>
+    </div>
+
+    <script type='text/javascript'>
+
+    function toGenres(){
+     result = confirm("To Genre Selection Page?");
+    }
+      /*
+      function to sign in with Google's API
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        var id = profile.getId();
+        var fullName = profile.getName();
+        var givenName = profile.getGivenName();
+        var familyName = profile.getFamilyName();
+        var imgUrl = profile.getImageUrl();
+        var email = profile.getEmail();
+        var id_token = googleUser.getAuthResponse().id_token;
+        document.getElementById('fname') = givenName;
+        if(familyName != undefined){
+          document.getElementById('lname') = familyName;
+        }
+        document.getElementById('email') = email;
+        document.getElementById('name').value = givenName + familyName;
+        document.getElementById('image').value = imgUrl;
+      } function will be moved to index, data on this page will be retrieved from server*/
+    </script>
+
+
+  </body>
+</html>

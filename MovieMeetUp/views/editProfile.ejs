@@ -51,7 +51,7 @@
         <label>favorite movie</label><input type='text' class='input-box' maxlength='280' id='favMovie' name='favMovie' value='<%= User.favmovie %>'>
         
         <!-- button to direct user to GENERE SELECT PAGE -->
-        <button type='button' value='edit genres' id='pickGenres' action="../genreSelection.html" target = "_blank">edit genres</button>  
+        <button type='button' value='edit genres' id='pickGenres' onclick="location.href='../genreSelection.html';" target = "_blank">edit genres</button>
         <button type='submit' class='btn' id='submit'>save</button>
       </form>
 

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Genre Selection - Movie Meetup</title>
+	 <!-- add bootstrap css file -->
+	 <link rel="icon" type="image/png" sizes="32x32" href="images/popcorn-favicon-icons8-small.png">
+
+
+
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src='js/main.js'></script>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+  <!-- navbar -->
+
+<!-- portfolio -->
+<div id="allgenres">
+<form name="genreForm" action="/profiler/uploadGenres" method="POST">
+	<div class="portfolio" id="portfolio">
+	<div class="horizontal-center">
+	<button class="big-boy-button" type="submit" id="submitButton">Submit</button>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<br>
+<hr>
+	 <h1 class="text-center">Main Movie Genres</h1>
+	 <input type='hidden' id='genres' name="genres"/>
+</form>
+		 <div class="container">
+	    <div class="row">
+      <div class="col-sm-4 my-5">
+          <div class="card card-flip h-100">
+              <div class="card-front text-white bg-dark">
+                  <div class="card-body">
+                    <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/fisted-hand-sign_1f44a.png"  alt="Responsive image">
+                      <h2 class="card-title">Action</h2>
+                  </div>
+              </div>
+              <div class="card-back bg-white">
+                  <div class="card-body">
+                      <h2 class="card-title">Definition</h2>
+                      <p class="card-text">One of the earliest film genres in existence, the action genre has close ties to classic strife and struggle narratives that you find across all manner of art and literature. Includes everything from historical war epics to some basic portrayals of dastardly train robberies. It’s also one of our best Examples of the evolution of our cinematic hero’s journey and the classic hero vs. villain narratives, which you’ll find across cinema and genres.
+                      <br><br>Examples:
+                      <br>Bourne Ultimatum
+                      <br>The Matrix
+                      <br>Die Hard </p>
+                  </div>
+              </div>
+          </div>
+          <div class="double">
+            <input type="checkbox" name="Action" id="Action"  class="text-center">
+          </div>
+      </div>
+
+      <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/clown-face_1f921.png"  alt="Responsive image">
+                     <h2 class="card-title">Comedy</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Everyone needs a good laugh, and the comedy genre is one of the best ways to get there. The comedy genre covers any work in film or television whose general purpose is to create humor and intentional laughs for the audience. The comedy genre has also been one of the most flexible genres, as its roots have made their way into the very fabric of cinema.
+                       <br><br><br><br>Examples:
+                       <br>Borat
+                       <br>Tropic Thunder
+                       <br>Superbad
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Comedy" id="Comedy"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+        <div class="card card-flip h-100">
+            <div class="card-front text-white bg-dark">
+                <div class="card-body">
+                  <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/performing-arts_1f3ad.png"  alt="Responsive image">
+                    <h2 class="card-title">Drama</h2>
+                </div>
+            </div>
+            <div class="card-back bg-white">
+                <div class="card-body">
+                    <h2 class="card-title">Definition</h2>
+                    <p class="card-text">The drama genre features stories with high stakes and numerous conflicts. They’re plot-driven and demand that every character and scene move the story forward. Dramas follow a clearly defined narrative plot structure, portraying real-life scenarios or extreme situations with emotionally-driven characters.
+
+                       <br><br><br><br><br>Examples:
+                           <br>Schindler's List
+                           <br>The Social Network
+                           <br>Titanic
+                          </p>
+                </div>
+            </div>
+        </div>
+        <div class="double">
+          <input type="checkbox" name="Drama" id="Drama"  class="text-center">
+        </div>
+    </div>
+
+      <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/dragon_1f409.png"  alt="Responsive image">
+                     <h2 class="card-title">Fantasy</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Films in the fantasy genre feature magical and supernatural elements that do not exist in the real world. Although some films juxtapose a real-world setting with fantastical elements, many create entirely imaginary universes with their own laws, logic, and populations of imaginary races and creatures. Like science fiction films, fantasy films are speculative but are not tied to reality or scientific fact.
+
+                       <br><br><br> Examples:
+                       <br>Labyrinth
+                       <br>The Wizard of Oz
+                       <br>Harry Potter
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Fantasy" id="Fantasy"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/axe_1fa93.png"  alt="Responsive image">
+                     <h2 class="card-title">Horror</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Horror films feature elements that leave people with an overwhelming sense of fear and dread. Horror movies often include serial killers or monsters as persistent, evil antagonists to play on viewers’ fears or nightmares. Audiences who love the horror genre seek out these movies specifically for the adrenaline rush produced by ghosts, gore, monsters, and jump-scares.
+                       <br><br><br><br>Examples:
+                       <br>Friday the 13th
+                       <br>A Nightmare on Elm Street
+                       <br>Halloween
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Horror" id="Horror"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/crystal-ball_1f52e.png"  alt="Responsive image">
+                     <h2 class="card-title">Mystery</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                    <p class="card-text">Mystery films are all about the puzzle, and often feature a detective or amateur sleuth who is trying to solve it. Mystery films are full of suspense, and the protagonist searches for clues or evidence throughout the movie, piecing together events and interviewing suspects to solve the central question.
+                      <br><br><br><br><br>Examples:
+                      <br>Knives Out
+                      <br>Sherlock Holmes
+                      <br>Zodiac
+                    </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Mystery" id="Mystery"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/couple-with-heart_1f491.png"  alt="Responsive image">
+                     <h2 class="card-title">Romance</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Romance films are love stories. They center around two protagonists exploring some of the elements of love like relationships, sacrifice, marriage, obsession, or destruction. Romance movies sometimes feature hardships like illness, infidelity, tragedy, or other obstacles for the love interests to overcome.
+                       <br><br><br><br><br>Examples:
+                       <br>The Fault in Our Stars
+                       <br>The Notebook
+                       <br>The Lucky One
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Romance" id="Romance"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/astonished-face_1f632.png"  alt="Responsive image">
+                     <h2 class="card-title">Thriller</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                    <p class="card-text">Thrillers expertly blend mystery, tension, and anticipation into one exciting story. Successful thrillers are well-paced, often introducing red herrings, divulging plot twists, and revealing information at the exact right moments to keep the audience intrigued. Thrillers often include a “ticking clock” aspect, where the stakes are set against a finite amount of time. Crime films, political thrillers, and techno-thrillers are all featured in the thriller genre.
+                      <br><br>Examples:
+                      <br>The Silence of the Lambs
+                      <br>Parasite
+                      <br>Fight Club
+                    </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Thriller" id="Thriller"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/face-with-cowboy-hat_1f920.png"  alt="Responsive image">
+                     <h2 class="card-title">Western</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Westerns tell the tale of a cowboy or gunslinger pursuing an outlaw in the Wild West. The main character is often seeking revenge and will face off with the criminal in a duel or shootout at the end. Westerns are vivid productions set in the American West—such as the desert, mountains, or plains—that can inspire and inform the characters and the action.
+
+                      <br> <br><br><br>Examples:
+                       <br>Once Upon a Time in the West
+                       <br>The Good, The Bad, and the Ugly
+                       <br>True Grit
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Western" id="Western"  class="text-center">
+         </div>
+     </div>
+
+     <div class="col-sm-4 my-5">
+         <div class="card card-flip h-100">
+             <div class="card-front text-white bg-dark">
+                 <div class="card-body">
+                   <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/telescope_1f52d.png"  alt="Responsive image">
+                     <h2 class="card-title">Science Fiction</h2>
+                 </div>
+             </div>
+             <div class="card-back bg-white">
+                 <div class="card-body">
+                     <h2 class="card-title">Definition</h2>
+                     <p class="card-text">Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life.
+                    <br>	<br><br> <br><br><br>Examples:
+                       <br>War of the Worlds
+                       <br>Frankenstein
+                       <br>The Invisible Man
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <div class="double">
+           <input type="checkbox" name="Science Fiction" id="ScienceFiction"  class="text-center">
+         </div>
+     </div>
+
+
+    </div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h1 class="text-center">Main Sub Genres</h1>
+<h2 style="color:#f97300" class="text-center">Action Genre</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/crossed-swords_2694.png"  alt="Responsive image">
+              <h2 class="card-title">Military/War</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Concerned with warfare, typically about naval, air, or land battles, with combat scenes central to the drama. The fateful nature of battle scenes means that war films often end with them.
+              <br><br><br>Examples:
+              <br>Hacksaw Ridge
+              <br>1917
+              <br>Dunkirk
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Military/War" id="Military/War"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/male-sleuth_1f575-fe0f-200d-2642-fe0f.png"  alt="Responsive image">
+              <h2 class="card-title">Spy & Espionage</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text"> Spy films show the espionage activities of government agents and their risk of being discovered by their enemies.
+              <br><br><br><br><br><br>Examples:
+              <br>Goldfinger
+              <br>Dr.No
+              <br>The Man from U.N.C.L.E.
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Spy/Espionage" id="Spy/Espionage"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/martial-arts-uniform_1f94b.png"  alt="Responsive image">
+              <h2 class="card-title">Martial Arts</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Martial arts films, also colloquially known as karate or kung fu films, are a subgenre of action films that feature numerous martial arts fights between characters
+              <br><br><br><br>Examples:
+              <br>Five Deadly Venoms
+              <br>Enter the Dragon
+              <br>Ip Man
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Martial Arts" id="MartialArts"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/pistol_1f52b.png"  alt="Responsive image">
+              <h2 class="card-title">Western Gun</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+          <p class="card-text"> Emphasizes gunplay, action, and often violence.
+            <br><br><br><br><br><br><br><br>Examples:
+            <br>Colt .45
+            <br>Five Guns West
+            <br>the Gunfighter
+          </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Western Gun" id="WesternGun"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img id="pic2" class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/boxing-glove_1f94a.png"  alt="Responsive image">
+              <h2 class="card-title">Action Hybrid</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">This genre is for movies that highly emphasize action as much as it emphasizes its hybrid genre.
+
+                <br><br><br><br><br>Examples:
+                <br>Space Jam
+                <br>Hellboy
+                <br>Creed
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Action Hybrid" id="ActionHybrid"  class="text-center">
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Comedy</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/hammer_1f528.png"  alt="Responsive image">
+              <h2 class="card-title">Slapstick</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Slapstick comedy is primarily a physical kind of comedy based around pratfalls and mild comic violence — smacks in the head, pokes in the eyes, people falling down, etc.
+              <br><br><br>Examples:
+              <br>The Three Stooges
+              <br>The Mask
+              <br>The Naked Gun
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Slapstick" id="Slapstick"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/fencer_1f93a.png"  alt="Responsive image">
+              <h2 class="card-title">Screwball</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Screwball comedy is a subgenre of the romantic comedy genre. It was applied to films where everything was a juxtaposition: educated and uneducated, rich and poor, intelligent and stupid, etc.
+              <br><br><br>Examples:
+              <br>She's Funny That Way
+              <br>Anchorman
+              <br>Flirting with Disaster
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Screwball" id="Screwball"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/man-supervillain_1f9b9-200d-2642-fe0f.png"  alt="Responsive image">
+              <h2 class="card-title">Parody</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">A parody film or spoof film is a subgenre of comedy film that parodies other film genres or films as pastiches, works created by imitation of the style of many different films reassembled together.
+                <br><br><br>Examples:
+                <br>Airplane!
+                <br>Spaceballs
+                <br>Scary Movie
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Parody" id="Parody"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/spider_1f577.png"  alt="Responsive image">
+              <h2 class="card-title" >Black Comedy</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Black comedy, also known as black humor, dark humor, dark comedy, morbid humor, or gallows humor, is a style of comedy that makes light of subject matter that is generally considered taboo.
+                <br><br><br>Examples:
+                <br>Heathers
+                <br>Dr. Strangelove
+                <br>Fargo
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Black Comedy" id="BlackComedy"  class="text-center">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Romance</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/books_1f4da.png"  alt="Responsive image">
+              <h2 class="card-title">Historical Romance</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Historical romance is a broad category of fiction in which the plot takes place in a setting located in the past with a lot of emphasis on what life is like in that time setting.
+              <br><br><br>Examples:
+              <br>Pride and Prejudice
+              <br>Titanic
+              <br>Sense and Sensibility
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Historial Romance" id="HistoricalRomance"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/love-letter_1f48c.png"  alt="Responsive image">
+              <h2 class="card-title">Romantic Drama</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Two basic elements comprise every romance novel: a central love story and an emotionally satisfying and optimistic ending.
+              <br><br><br><br>Examples:
+              <br>A Star Is Born
+              <br>Casablanca
+              <br>La La Land
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Romantic Drama" id="RomanticDrama"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png"  alt="Responsive image">
+              <h2 class="card-title">Romantic Comedy</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Romantic comedy is a subgenre of comedy and slice-of-life fiction, focusing on lighthearted, humorous plot lines centered on romantic ideas, such as how true love is able to surmount most obstacles.
+              <br>	<br><br>Examples:
+                <br>Crazy, Stupid, Love
+                <br>The Proposal
+                <br>The Kissing Booth
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Romantic Comedy" id="RomanticComedy"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/women-with-bunny-ears-partying_1f46f-200d-2640-fe0f.png"  alt="Responsive image">
+              <h2 class="card-title" >Chick Flick</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Chick flick is a slang term, sometimes used pejoratively, for the film genre catered specifically to women's interests, and is marketed towards women demographics.
+                <br><br><br>Examples:
+                <br>Legally Blonde
+                <br>Clueless
+                <br>She's The Man
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Chick Flick" id="ChickFlick"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/extraterrestrial-alien_1f47d.png"  alt="Responsive image">
+              <h2 class="card-title" >Paranormal Romance</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Paranormal romance is a subgenre of both romantic fiction and speculative fiction. Paranormal romance focuses on romantic love and includes elements beyond the range of scientific explanation.
+                <br><br><br>Examples:
+                <br>Crimson Peak
+                <br>Shape of Water
+                <br>About Time
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Paranormal Romance" id="ParanormalRomance"  class="text-center">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Horror Genre</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/zombie_1f9df.png"  alt="Responsive image">
+              <h2 class="card-title">Zombie</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">This genre has featured zombies that are more agile, vicious, intelligent, and stronger than the traditional zombie. It brings about feeling about life, death, survival, seeking a cure zombies being the obstacle.
+              <br><br>Examples:
+              <br>Night of the Living Dead
+              <br>World War Z
+              <br>Train to Busan
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Zombie" id="Zombie"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/woman-mage_1f9d9-200d-2640-fe0f.png"  alt="Responsive image">
+              <h2 class="card-title">Folk Horror</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text"> This genre generally – but not always – deals with rural, often British settings where the scares come not from an intrusive outsider.
+              <br><br><br><br><br>Examples:
+              <br>The VVitch
+              <br>Midsommar
+              <br>The Blair Witch Project
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Folk Horror" id="FolkHorror"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/leg_1f9b5.png"  alt="Responsive image">
+              <h2 class="card-title">Body Horror</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Horror that intentionally showcases graphic or psychologically disturbing violations of the human body. These violations may manifest through aberrant sex, mutations, mutilation, etc.
+                <br><br><br>Examples:
+                <br>Hellraiser
+                <br>Tusk
+                <br>The Fly
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Body Horror" id="BodyHorror"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/movie-camera_1f3a5.png"  alt="Responsive image">
+              <h2 class="card-title">Found Footage</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Found footage is a film subgenre in which all or a substantial part of the work is presented as if it were discovered film or video recordings.
+              <br>	<br><br><br>Examples:
+                <br>Cloverfield
+                <br>The Blair Witch Project
+                <br>V/H/S
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Found Footage" id="FoundFootage"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/cloud-with-tornado_1f32a.png"  alt="Responsive image">
+              <h2 class="card-title">Disaster</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">A disaster film or disaster movie is a film genre that has an impending or ongoing disaster as its subject and primary plot device.
+              <br>	<br><br><br>Examples:
+                <br>Geostorm
+                <br>2012
+                <br>The Wandering Earth
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Disaster" id="Disaster"  class="text-center">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Thriller</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/pushpin_1f4cc.png"  alt="Responsive image">
+              <h2 class="card-title">Conspiracy Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">The protagonists of conspiracy thrillers are often journalists or amateur investigators who find themselves pulling on a small thread which unravels a vast conspiracy that ultimately goes "all the way to the top."
+              <br><br>Examples:
+              <br>Angels and Demons
+              <br>National Treasure
+              <br>The Davinci Code
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Conspiracy Thriller" id="ConspiracyThriller"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/hocho_1f52a.png"  alt="Responsive image">
+              <h2 class="card-title">Crime thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Crime films are often based on real events or are adaptions of plays or novels, or a remake or adoption of a previous film. Some plots are original and entirely fictional. It can be a gangster film.
+              <br><br><br>Examples:
+              <br>Goodfellas
+              <br>Fargo
+              <br>Scarface
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Crime Thriller" id="CrimeThriller"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/banknote-with-dollar-sign_1f4b5.png"  alt="Responsive image">
+              <h2 class="card-title" >Legal Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">A subgenre of thriller and crime fiction in which the major characters are lawyers and their employees. The system of justice itself is always a major part of these works.
+                <br><br><br>Examples:
+                <br>The Whole Truth
+                <br>The Firm
+                <br>The Lincoln Lawyer
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Legal Thriller" id="LegalThriller"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/right-pointing-magnifying-glass_1f50e.png"  alt="Responsive image">
+              <h2 class="card-title" >Spy Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Deals with the subject of fictional espionage, either in a realistic way (such as the adaptations of John le Carré) or as a basis for fantasy (such as many James Bond films).
+                <br><br><br><br>Examples:
+                <br>Goldfinger
+                <br>Mission Impossible
+                <br>Casino Royale
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Spy Thriller" id="SpyThriller"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/shocked-face-with-exploding-head_1f92f.png"  alt="Responsive image">
+              <h2 class="card-title" >Psychological Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Narratives with domesticated settings in which action is suppressed and where thrills are provided instead via investigations of the psychologies of the principal characters
+                <br><br><br>Examples:
+                <br>Pyscho
+                <br>Silence of the Lambs
+                <br>Get Out
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Psychological Thriller" id="PsychologicalThriller"  class="text-center">
+  </div>
+</div>
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/ghost_1f47b.png"  alt="Responsive image">
+              <h2 class="card-title" >Supernatural Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Supernatural thriller films include an otherworldly element (such as fantasy or the supernatural) mixed with tension, suspense, or plot twists.
+                <br><br><br><br>Examples:
+                <br>Poltergeist
+                <br>The Shining
+                <br>IT
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Supernatural Thriller" id="SupernaturalThriller"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/robot-face_1f916.png"  alt="Responsive image">
+              <h2 class="card-title" >Techno Thriller</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">A movie in which the excitement of the plot depends in large part upon the descriptions of computers, weapons, software, military vehicles, or other machines.
+                <br><br><br>Examples:
+                <br>Tron
+                <br>Ex Machina
+                <br>I, Robot
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Techno Thriller" id="TechnoThriller"  class="text-center">
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Western</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/cactus_1f335.png"  alt="Responsive image">
+              <h2 class="card-title">Classic Western</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text">Western is a genre of fiction set primarily in the latter half of the 19th and early 20th century in the Western United States, which is styled the "Old West".
+            <br><br>	<br><br><br>Examples:
+              <br>The Good, The Bad, and the Ugly
+              <br>The Kid
+              <br>A Fistful of Dollars
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Classic Western" id="ClassicWestern"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/womans-boots_1f462.png"  alt="Responsive image">
+              <h2 class="card-title">Revisionist/ Anti-Western</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text"> The Revisionist Western, Anti-Western or Post-Western is a subgenre of the Western film that traces its roots to the mid-1960s and early-1970s.
+            <br><br><br><br>	<br><br><br>Examples:
+              <br>Django Unchained
+              <br>True Grit
+              <br>The Hateful Eight
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Revisionist/Anti-Western" id="Revisionist/Anti-Western"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/guitar_1f3b8.png"  alt="Responsive image">
+              <h2 class="card-title">Contemporary/ Neo Western</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Uses traditional genre conventions and values but transplant them to a contemporary setting.
+              <br>	<br><br><br><br><br><br>Examples:
+                <br>The Three Burials of Melquiades Estrada
+                <br>The Outlaw Josey Wales
+                <br>Unforgiven
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Contemporary/Neo-Western" id="Contemporary/Neo-Western"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/milky-way_1f30c.png"  alt="Responsive image">
+              <h2 class="card-title" >Fantasy Space Western</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Space Western Science Fiction incorporates elements of the American West in a space setting.
+              <br><br><br>	<br><br><br><br>Examples:
+                <br>Cowboys Vs. Aliens
+                <br>Outland
+                <br>Flash Gordon
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Fantasy Space Western" id="FantasySpaceWestern"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/barber-pole_1f488.png"  alt="Responsive image">
+              <h2 class="card-title" >Modern Western</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">Following the success of Django Unchained, modern westerns play on western themes and setting but leave out dated aspects such as singing and dancing cowboys.
+                <br><br><br><br>Examples:
+                <br>True Grit
+                <br>No Country for Old Men
+                <br>Magnificent Seven
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Modern Western" id="ModernWestern"  class="text-center">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="portfolio" id="portfolio">
+<h2 style="color:#f97300" class="text-center">Sci-Fi Genre</h2>
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/alarm-clock_23f0.png"  alt="Responsive image">
+              <h2 class="card-title">Time Travel</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text"> Time travel in modern fiction is sometimes achieved by space and time warps, stemming from the scientific theory of general relativity.  Stories from antiquity often featured time travel into the future through a time slip.
+              <br><br><br>Examples:
+              <br>Back to the Future
+              <br>Groundhog Day
+              <br>Edge of Tomorrow
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Time Travel" id="TimeTravel"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/brain_1f9e0.png"  alt="Responsive image">
+              <h2 class="card-title">Cerebral Science</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+            <p class="card-text"> A Cerebral film is one where plot is secondary to the dialogue of the film, perfect example is My dinner with Andre. it refers to the word intellectually, which involves the psychological processes of thinking.
+              <br><br><br>Examples:
+              <br>The Matrix
+              <br>Inception
+              <br>Donnie Darko
+            </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Cerebral Science" id="CerebralScience"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/japanese-ogre_1f479.png"  alt="Responsive image">
+              <h2 class="card-title">Robot/Monster</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text">A monster movie, creature feature, or giant monster film is a film that focuses on a group of characters struggling to survive attacks by one or more antagonistic monsters, often abnormally large ones.
+                <br><br><br>Examples:
+                <br>Godzilla
+                <br>King Kong
+                <br>Pacific Rim
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Robot/Monster" id="Robot/Monster"  class="text-center">
+  </div>
+</div>
+
+<div class="col-sm-3 my-5">
+  <div class="card card-flip h-100">
+      <div class="card-front text-white bg-dark">
+          <div class="card-body">
+            <img class="text-center" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/flying-saucer_1f6f8.png"  alt="Responsive image">
+              <h2 class="card-title" >Alien Invasion</h2>
+          </div>
+      </div>
+      <div class="card-back bg-white">
+          <div class="card-body">
+              <h2 class="card-title">Definition</h2>
+              <p class="card-text"> A common feature in science fiction stories and film, in which extraterrestrials invade the Earth either to exterminate and supplant human life, enslave it under an intense state, harvest people for food, etc.
+                <br><br>Examples:
+                <br>Independence Day
+                <br>Invasion of the Body Snatchers
+                <br>The War of the Worlds
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="double">
+    <input type="checkbox" name="Alien Invasion" id="AlienInvasion"  class="text-center">
+  </div>
+</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+<hr>
+<form name="genreForm" action="/profiler/uploadGenres" method="POST">
+	<div class="horizontal-center">
+	<button class="big-boy-button" type="submit"id="submitButton">Submit</button>
+	<br>
+</div>
+</form>
+<p> <br />
+	<br />
+</p>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+	$("#submitButton").click(function( event ){
+
+	var selected = new Array();
+	 var allgenres = document.getElementById("allgenres");
+
+ //Reference all the CheckBoxes
+ 	var chks = allgenres.getElementsByTagName("INPUT");
+
+ // Loop and push the checked CheckBox value in Array.
+ 	for (var i = 0; i < chks.length; i++) {
+	 	if (chks[i].checked) {
+		 	selected.push(chks[i].name);
+	 	}
+ 	}
+
+	$("input[name=genres]").val(selected.join(', '));
+	console.log(document.getElementById("genres").value);
+});
+</script>
+</html>
