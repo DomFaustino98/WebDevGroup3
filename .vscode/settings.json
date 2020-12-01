@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/e80552cb-a54e-4a87-8b30-48aef4d04821/resourceGroups/moviemeetup/providers/Microsoft.Web/sites/moviemeetup",
-    "appService.deploySubpath": "MovieMeetUp"
-}
