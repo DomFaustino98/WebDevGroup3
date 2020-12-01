@@ -65,7 +65,6 @@ ul.topnav {
     <div class='edit-form'>
 
       <h1 class='form-title'><%= User.name %></h1>
-      <form action='profileMMU.html' method='POST' id='form'>
         <% if (User.profilepic != undefined) { %>
         <img src='<%= User.profilepic %>' style="width:100%; max-width:300px;"/>
         <% } %>
@@ -77,16 +76,13 @@ ul.topnav {
         <label>My favorite movie is <%= User.favmovie %></label>
 
 
-       <!-- button to use mailto to send an email -->
-       <button><a href='mailto:<%= User.email %>' style='color:#fff; text-decoration:none'>send me a message</a></button>
+        <button><a href='mailto:<%= User.email %>' style='color:#fff; text-decoration:none'>send me a message</a></button>
 
         <!--Directs user to profileMMU.ejs to edit profile-->
         <% if (User.id == session.id){ %>
         <a href='/profiler/editProfile' id='editProfileLink' style='text-decoration:none;'>edit profile</a>
         <% } %>
         <!--<a href='profileMMU.ejs' style='text-decoration:none;'>edit profile</a>-->
-
-      </form>
 
     </div><!-- close div for class edit form -->
 
