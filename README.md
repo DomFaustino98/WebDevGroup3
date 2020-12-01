@@ -6,6 +6,9 @@ COSC484 w Jal Irani Group 3
 --- STEPS TO RUN THE WEBSITE ---
 
 Launch command prompt
+
 Navigate inside the MovieMeetUp directory inside the WebDevGroup3 directory.
+
 Type "npm start dev" to launch the server
+
 Navigate to "localhost:3000" within your browser
