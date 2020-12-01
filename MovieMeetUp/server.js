@@ -1,13 +1,9 @@
-#!/usr/bin/env node
-
 const express = require('express')
 const bodyParser= require('body-parser') 
 const path = require('path');
 const app = express(); 
 const fs = require("fs");
-const http = require("http");
 const MongoClient = require('mongodb').MongoClient  
-const httpServer = http.createServer(app);
 const multer = require("multer");
 
 var uri = 'mongodb+srv://studentUser:iamstudent@cluster0.y9n1j.mongodb.net/movieDB?retryWrites=true&w=majority';
@@ -148,6 +144,14 @@ app.post('/userlist-filtered', (req, res) => {
     res.render('userlist.ejs', {User: result}) // We want to render the userlist with the array of user information we created. This allows us to display user information on the page.
   }
 })
+})
+
+app.post('/chat', (req, res) => {
+  var UserID = req.body.id;
+  var Username = req.body.name;
+  var LoggedUser = req.session.user.id;
+  var ChatID = LoggedUser.concat(UserID);
+  console.log(ChatID);
 })
 
 // -------------------------------------------------------------------------------------------------- //
