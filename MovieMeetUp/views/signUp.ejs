@@ -14,15 +14,14 @@
           <h1 class='form-title'>Sign Up</h1>
 
           <!--ejs for outputting variable-->
-        <form id='signUp' class='input-group' method='POST'  action='/profiler/EditProfileProc'>
+        <form id='signUp' class='input-group' method='POST'  action='/selectGenres.html'>
+          <input type="hidden" name="id" value="<%= User.id %>"/>
           <input type='text' class='input-field' required placeholder='first name' id='fname' name='fname' value='<%= User.firstname %>'>
           <input type='text' class='input-field' required placeholder='last name' id='lname' name='lname' value='<%= User.lastname %>'>
           <input type='text' class='input-field' required placeholder='username' id='username' name='name' value='<%= User.name %>'>
 
           <!-- button to direct user to GENERE SELECT PAGE -->
-          <button type='submit' value='edit genres' class='submit-btn'id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>next</button>
-          <!-- button to direct user to GENERE SELECT PAGE as written in editProfile.ejs-->
-          <!--<button type='submit' value='edit genres' class='btn' id='pickGenres' onsubmit='return toGenres()' action='editGenres.ejs'>edit genres</button>-->
+          <button type='submit' value='edit genres' class='submit-btn'id='pickGenres'>next</button>
         </form>
     </div>
 

@@ -90,6 +90,19 @@ app.post('/profiler/profilerProc.html', (req, res) => { // This is an important 
 })
 })
 
+app.post('/selectGenres.html', (req, res) => { // This will be the first time the user selects genres after signing up...
+  var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){ // Find the user in the DB based on the User ID
+    if (result){
+      var userUpdate = {id: req.body.id};
+        db.collection('User').update(userUpdate, {$set: {firstname: req.body.fname, lastname: req.body.lname, name: req.body.name}, }, function(err, res){ // We update the basic information of the user from the signup page
+          if (err) throw err;
+          console.log("successfully updated"); // back-end console logging to make sure we updated a user...
+        })
+    }
+  })
+  res.redirect('genreSelection.html'); // Direct them to the genre selection HTML page
+})
+
 app.post('/profiler/viewProfile.html', (req, res) => { // This is a request to view another users profile (or their own profile)
   var cursor = db.collection('User').findOne({id: req.body.id}, function(err, result){ // An ID must be provided in this request so the server can locate the user in the database. If a use is found - the profile viewer is rendered with that users information
       res.render('profileMMU.ejs', {User: result, session: req.session.user}) // The session is also attached so we can see if the profile is the currently logged in user (If so, we allow them to edit their profile)
