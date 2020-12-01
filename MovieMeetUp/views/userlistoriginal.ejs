@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+
+  <style>
+  ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+    ul.topnav li a.active {background-color: #888;}
+
+    ul.topnav li.right {float: right;}
+
+  .navbar-collapse{
+   justify-content: flex-end;
+  }
+  .navbar-toggler{
+    background:#fff !important;
+  }
+  </style>
+</head>
+<body>
+
+<ul class="topnav">
+    <li><a class="active" href="./userlist">User List</a></li>
+    <li><a href="/profiler/myprofile" >View Profile</a></li>
+    <li><a href="/">Log Out</a></li>
+</ul>
+
+<form action="/userlist-filtered" method='POST'>
+  <label for="genreFilter">Filter by Genre:</label>
+  <select name="genreFilter">
+    <option value="Action">Action</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Drama">Drama</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Horro">Horror</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Western">Western</option>
+    <option value="Science Fiction">Science Fiction</option>
+  </select>
+  <button type="submit">Go</button>
+</form>
+
+<ul class="User">
+    <% for(var i=0; i<User.length; i++) {%>
+      <li class="User <%= i %>">
+        <% if (User[i].profilepic != undefined){
+              if(User[i].profilepic.includes("images/")){ %> <!-- This means the user uploaded their picture from our website...-->
+                <img src='profiler/<%= User[i].profilepic %>' style="width: 200px"/><%
+              } else { %> <!-- This means the user brought their profile picture over from google - no need to store this on our server -->
+                <img src='<%= User[i].profilepic %>' style="width: 200px"/><%
+              }
+            } %>
+        <br>
+        <span><%= User[i].firstname %> <%= User[i].lastname %></span><Br>
+        <% if (User[i].favmovie != undefined) { %>
+        <span>Favorite Movie: <%= User[i].favmovie %></span>
+        <% } %>
+      </li>
+      <br>
+      <form action='/profiler/viewProfile.html' method='POST' id='form'>
+      <input type="hidden" name="id" value='<%= User[i].id %>'/>
+      <button type="submit">View Profile</button>
+      </form>
+<hr>
+    <% } %>
+</body>
+</html>
