@@ -20,8 +20,6 @@ app.use(session({secret: "Your secret key"}));
 app.set('view engine', 'ejs');
 app.set('views','./views');
 
-
-
 MongoClient.connect(uri, (err, database) => { // Connecting to our database using our defined variables above
    // ... start the server 
 })

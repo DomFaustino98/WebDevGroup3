@@ -1,10 +1,13 @@
 body
 {
-  margin: 0;
+  margin: auto;
   padding: 0;
   font-family: sans-serif;
-  background-image: url(public/images/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
-  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-image: url(../images/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
+  background-position: center center;  
 }
 .edit-form/*white box that is the form container*/
 {
