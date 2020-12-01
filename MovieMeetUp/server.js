@@ -24,9 +24,6 @@ app.use(session({secret: "Your secret key"}));
 app.set('view engine', 'ejs');
 app.set('views','./views');
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
 MongoClient.connect(uri, (err, database) => { // Connecting to our database using our defined variables above
    // ... start the server 
 })
