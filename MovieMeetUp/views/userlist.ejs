@@ -1229,7 +1229,7 @@ a{
 	color: #fff;
 	background-color: #1c8adb;
 	width: 90%;   padding: 10px;   border-radius: 20px;
-	font-size: 15px;
+	font-size: 20px;
 	margin: 10px 0;
 	border: none;
 	outline: none;
@@ -1237,13 +1237,12 @@ a{
   position: absolute;
   bottom: 20px;
   right: 12px;
-
 }
 .filterB {
 	color: #fff;
 	background-color: #1c8adb;
-	width: 20%;   padding: 5px;   border-radius: 10px;
-	font-size: 15px;
+	width: 20%;   padding: 15px;   border-radius: 10px;
+	font-size: 25px;
 	margin: 1px 0;
 	border: none;
 	outline: none;
@@ -1640,6 +1639,19 @@ ul.topnav {
   cursor: -ms-grabbing;
   cursor: grabbing;
 }
+
+
+#gf{
+font-size: 30px;
+margin-left:40px;
+margin-top: 10px;
+}
+#genreFilter{
+  margin-top: 10px;
+height: 60px;
+ width:150px;
+ font-size: 30px;
+}
 </style>
 </head>
 
@@ -1651,8 +1663,8 @@ ul.topnav {
 	</ul>
 <div>
 	<form action="/userlist-filtered" method='POST'>
-  <label for="genreFilter">Filter by Genre:</label>
-  <select name="genreFilter">
+  <label id="gf" for="genreFilter">Filter by Genre:</label>
+  <select name="genreFilter" id="genreFilter">
     <option value="Action">Action</option>
     <option value="Comedy">Comedy</option>
     <option value="Drama">Drama</option>
