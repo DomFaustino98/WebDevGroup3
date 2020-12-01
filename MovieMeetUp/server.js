@@ -69,6 +69,16 @@ app.get('/profiler/editProfile', (req, res) => { // This allows the user to see 
 }
 })
 
+app.post('/userlist-filtered', (req, res) => {
+  var genreFilter = req.body.genreFilter
+  var cursor = db.collection('User').find({likedgenres: genreFilter}).toArray(function(err, result){ // Find the user in the DB based on the session ID
+    console.log(result);
+    if (result){
+    res.render('userlist.ejs', {User: result}) // We want to render the userlist with the array of user information we created. This allows us to display user information on the page.
+  }
+})
+})
+
 // -------------------------------------------------------------------------------------------------- //
 // POST REQUESTS - THIS ALLOWS THE SERVER TO RENDER/REROUTE THE USER BASED ON POSTED DATA FROM ANOTHER PAGE // 
 
@@ -114,7 +124,8 @@ app.post('/profiler/uploadGenres', (req, res) => { // This post request allows t
     var cursor = db.collection('User').findOne({id: req.session.user.id}, function(err, result){ // We find the user (based off the session ID because only the logged in user can edit their own genres)
       if(result){ // If the user is found
         var userUpdate = {id: req.session.user.id};
-        db.collection('User').update(userUpdate, {$set: {likedgenres: req.body.genres}, }, function(err, res){ // We update the liked genres value within the Users collection for that specific user
+        var genreArr = req.body.genres.split(',');
+        db.collection('User').update(userUpdate, {$set: {likedgenres: genreArr}, }, function(err, res){ // We update the liked genres value within the Users collection for that specific user
           if (err) throw err;
           console.log("successfully updated"); // back-end console logging to make sure we updated a user...
         })
@@ -133,7 +144,7 @@ app.post('/profiler/EditProfileProc', (req, res) => { // This post allows the se
           if (err) throw err;
           console.log("successfully updated"); // back-end console logging to make sure we updated a user...
         })
-        res.render('profileMMU.ejs', {User: result, session: req.session.user}) // render their profile with their information.
+        res.redirect('./myprofile') // render their profile with their information.
       }
     })
   }
