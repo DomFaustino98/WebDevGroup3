@@ -69,16 +69,6 @@ app.get('/profiler/editProfile', (req, res) => { // This allows the user to see 
 }
 })
 
-app.post('/userlist-filtered', (req, res) => {
-  var genreFilter = req.body.genreFilter
-  var cursor = db.collection('User').find({likedgenres: genreFilter}).toArray(function(err, result){ // Find the user in the DB based on the session ID
-    console.log(result);
-    if (result){
-    res.render('userlist.ejs', {User: result}) // We want to render the userlist with the array of user information we created. This allows us to display user information on the page.
-  }
-})
-})
-
 // -------------------------------------------------------------------------------------------------- //
 // POST REQUESTS - THIS ALLOWS THE SERVER TO RENDER/REROUTE THE USER BASED ON POSTED DATA FROM ANOTHER PAGE // 
 
@@ -148,6 +138,16 @@ app.post('/profiler/EditProfileProc', (req, res) => { // This post allows the se
       }
     })
   }
+})
+
+app.post('/userlist-filtered', (req, res) => {
+  var genreFilter = req.body.genreFilter
+  var cursor = db.collection('User').find({likedgenres: genreFilter}).toArray(function(err, result){ // Find the user in the DB based on the session ID
+    console.log(result);
+    if (result){
+    res.render('userlist.ejs', {User: result}) // We want to render the userlist with the array of user information we created. This allows us to display user information on the page.
+  }
+})
 })
 
 // -------------------------------------------------------------------------------------------------- //
