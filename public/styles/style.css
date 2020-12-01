@@ -8,7 +8,7 @@
     }
     
     #userList {
-      display: none;
+      display: all;
     }
     
     #loader {
@@ -17,4 +17,31 @@
       width: 100%;
       text-align: center;
       top: 40%;
+    }
+    .chatScroll {
+      width: 1200px;
+      height: 450px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      text-align: center;
+      padding: 20px;
+    }
+    .left {
+      float: right; /* don't ask */
+    }
+    .right {
+      width: 700px;
+      height: 450px;
+      float: left;
+      padding: 20px;;
+    }
+    .sendMessage {   
+      text-align: center; 
+      position: center;
+      width: 1200px;
+      overflow-y: auto;
+    }
+    .roomsBox {
+      position: left;
+      text-align: center;
     }

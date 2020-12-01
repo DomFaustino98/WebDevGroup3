@@ -13,10 +13,10 @@ server.listen(port, function () {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/chat.html');
 });
 
-var usernames = {};
+var usernames = ["Bob", "Mark"];
 var rooms = ['123'];
 
 io.sockets.on('connection', function (socket) {
