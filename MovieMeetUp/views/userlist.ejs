@@ -1150,24 +1150,26 @@ a{
 }
 .container{
 	width:100%;
-	height: 100vh;
-	background-color:#a4152c;
+	height: 80vh;
+	background-color:#FFFFFF;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+  overflow: hidden;
 }
 .box{
 	width:350px;
-	height:610px;
+	height:600px;
 	background-color:#1e1e26;
-	border-radius: 10px;
+	border-radius: 0px;
 	box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	box-sizing: border-box;
-	margin: 20px 10px;
+	margin: 0px 0px;
+  position: relative;
 }
 .model{
 	height: 350px;
@@ -1183,16 +1185,18 @@ a{
 .details p{
 	font-family: calibri;
 	font-weight: bold;
-	color:#6a6a74;
+	color:#f0ead6 ;
 	text-align: center;
 	margin-top: 20px;
+  margin-bottom: 10px;
 }
 .marvel{
 	color:#32323e;
 	font-weight: bold;
 	letter-spacing: 2px;
 	font-family: bebas kai;
-	font-size: 25px;
+	font-size: 28px;
+  text-align: center
 }
 .logo{
 	height: 60px;
@@ -1221,16 +1225,31 @@ a{
 		width: 250px;
 	}
 }
-button {
+.buttonProfile {
 	color: #fff;
 	background-color: #1c8adb;
-	width: 100%;   padding: 10px;   border-radius: 20px;
+	width: 90%;   padding: 10px;   border-radius: 20px;
 	font-size: 15px;
 	margin: 10px 0;
 	border: none;
 	outline: none;
 	cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+
 }
+.filterB {
+	color: #fff;
+	background-color: #1c8adb;
+	width: 20%;   padding: 5px;   border-radius: 10px;
+	font-size: 15px;
+	margin: 1px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
 ul.topnav {
 		list-style-type: none;
 		margin: 0;
@@ -1630,7 +1649,7 @@ ul.topnav {
 	    <li><a href="/profiler/myprofile" >View Profile</a></li>
 	    <li><a href="/">Log Out</a></li>
 	</ul>
-
+<div>
 	<form action="/userlist-filtered" method='POST'>
   <label for="genreFilter">Filter by Genre:</label>
   <select name="genreFilter">
@@ -1645,10 +1664,15 @@ ul.topnav {
     <option value="Western">Western</option>
     <option value="Science Fiction">Science Fiction</option>
   </select>
-  <button type="submit">Go</button>
-</form>
+  <br>
+  <button class=filterB type="submit">Go</button>
 
-<div class="container">
+</form>
+<form action = "/userlist" methpd='POST'>
+  <button class=filterB type="submit">Remove Filter</button>
+</form>
+</div>
+<div id  class="container">
 	<ul id="autoWidth" class="cs-hidden">
 
     <% for(var i=0; i<User.length; i++) {%>
@@ -1657,20 +1681,26 @@ ul.topnav {
 					<p class="marvel">
         <% if (User[i].profilepic != undefined){
               if(User[i].profilepic.includes("images/")){ %> <!-- This means the user uploaded their picture from our website...-->
-                <img src='profiler/<%= User[i].profilepic %>' width="240px" height="240"/><%
+                <img id="img1" src='profiler/<%= User[i].profilepic %>' width="270px" height="270"/><%
               } else { %> <!-- This means the user brought their profile picture over from google - no need to store this on our server -->
-                <img src='<%= User[i].profilepic %>' width="240" height="240"/><%
+                <img id="img2" src='<%= User[i].profilepic %>' width="270" height="270"/><%
               }
             } %>
         <br>
+
         <span><%= User[i].firstname %> <%= User[i].lastname %></span><Br>
-        <% if (User[i].favmovie != undefined) { %> </p>
+          <div class="details">
+          <p>
+        <% if (User[i].favmovie != undefined) { %>
         <span>Favorite Movie: <%= User[i].favmovie %></span>
         <% } %>
+      </p> </div>
 			<br>
       <form action='/profiler/viewProfile.html' method='POST' id='form'>
       <input type="hidden" name="id" value='<%= User[i].id %>'/>
-      <button type="submit">View Profile</button>
+
+      <button class="buttonProfile" type="submit">View Profile</button>
+
       </form>
 		</div>
 		</li>
