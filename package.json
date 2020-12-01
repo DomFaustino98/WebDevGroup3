@@ -1,26 +1,25 @@
 {
-  "name": "current-project",
+  "name": "private-chat-application",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "devStart": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "Private Chat Application with Node.js, Socket.IO and AngularJS",
+  "main": "app.js",
   "dependencies": {
-    "socket.io": "^2.3.0"
+    "express": "^4.13.4",
+    "socket.io": "^3.0.3"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.4"
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebDevSimplified/Realtime-Simple-Chat-App.git"
+    "url": "https://github.com/sivasankars"
   },
-  "bugs": {
-    "url": "https://github.com/WebDevSimplified/Realtime-Simple-Chat-App/issues"
-  },
-  "homepage": "https://github.com/WebDevSimplified/Realtime-Simple-Chat-App#readme",
-  "description": ""
+  "keywords": [
+    "socket.io",
+    "node.js",
+    "angular.js"
+  ],
+  "author": "siva sankar",
+  "license": "ISC"
 }
